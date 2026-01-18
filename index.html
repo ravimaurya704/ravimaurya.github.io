@@ -3,220 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravi Maurya | Portfolio</title>
+    <title>Ravi Maurya | Architecting Data & Quantum AI</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- RESET & VARIABLES --- */
+        /* --- 1. CORE VARIABLES & RESET --- */
         :root {
-            --bg: #0a192f;
-            --text-main: #ccd6f6;
-            --text-muted: #8892b0;
-            --accent: #64ffda;
-            --nav-bg: rgba(10, 25, 47, 0.95);
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;  /* Cyan for Data */
+            --secondary: #818cf8; /* Purple for Quantum */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Outfit', sans-serif; 
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 20%);
+        }
+
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
 
-        /* --- NAVIGATION --- */
+        /* --- 2. NAVIGATION (Glassmorphism) --- */
         nav {
-            position: fixed; top: 0; width: 100%; height: 80px;
-            background: var(--nav-bg); display: flex; justify-content: space-between;
-            align-items: center; padding: 0 50px; z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: fixed; top: 0; width: 100%; padding: 20px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px);
+            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .logo { color: var(--accent); font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; border: 2px solid var(--accent); padding: 5px 15px; border-radius: 5px; }
-        .nav-items a { margin-left: 30px; font-size: 0.9rem; color: var(--text-main); }
-        .nav-items a:hover { color: var(--accent); }
-        .btn-resume { border: 1px solid var(--accent); padding: 10px 20px; border-radius: 5px; color: var(--accent) !important; margin-left: 30px; }
-        .btn-resume:hover { background: rgba(100, 255, 218, 0.1); }
 
-        /* --- HERO SECTION --- */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 150px; }
-        .hero h3 { color: var(--accent); font-family: monospace; font-size: 1.1rem; margin-bottom: 20px; }
-        .hero h1 { font-size: 4rem; font-weight: 800; color: #e6f1ff; line-height: 1.1; }
-        .hero h2 { font-size: 3.5rem; font-weight: 700; color: var(--text-muted); margin-bottom: 30px; }
-        .hero p { max-width: 500px; color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem; }
+        .logo { 
+            font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 1.5rem; 
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); }
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn-glow {
+            padding: 10px 24px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            border: 1px solid rgba(56, 189, 248, 0.3); color: var(--primary);
+            box-shadow: 0 0 15px var(--accent-glow);
+            transition: 0.3s;
+        }
+        .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 0 25px var(--accent-glow); background: var(--primary); color: #000; }
+
+        /* --- 3. HERO SECTION (Typing Effect) --- */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; padding: 0 10%; position: relative;
+        }
+
+        .hero-content { max-width: 800px; z-index: 2; }
         
-        /* --- SECTIONS --- */
-        section { padding: 100px 150px; }
-        .section-header { display: flex; align-items: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2rem; color: #e6f1ff; white-space: nowrap; }
-        .section-header h2 span { color: var(--accent); font-family: monospace; margin-right: 10px; font-size: 1.5rem; }
-        .section-header::after { content: ""; display: block; width: 300px; height: 1px; background: #233554; margin-left: 20px; }
+        .badge {
+            display: inline-block; padding: 6px 16px; border-radius: 20px;
+            background: rgba(56, 189, 248, 0.1); color: var(--primary);
+            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-bottom: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
 
-        /* --- FEATURED PROJECT CARD --- */
-        .project-card { position: relative; display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-bottom: 100px; align-items: center; }
+        h1 { font-size: 4.5rem; line-height: 1.1; font-weight: 800; margin-bottom: 25px; letter-spacing: -2px; }
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.7; max-width: 600px; }
+
+        .hero-btns { display: flex; gap: 20px; }
         
-        /* The "Visual" side of the card */
-        .card-visual {
-            height: 350px;
-            background: linear-gradient(135deg, #112240 0%, #233554 100%);
-            border-radius: 5px;
-            border: 1px solid var(--accent);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0.9;
+        /* Floating abstract shapes background */
+        .blob {
+            position: absolute; width: 500px; height: 500px; border-radius: 50%;
+            background: var(--primary); opacity: 0.05; filter: blur(80px);
+            top: 20%; right: 10%; z-index: 1; animation: float 10s infinite ease-in-out;
         }
-        .card-visual i { font-size: 5rem; color: var(--accent); opacity: 0.5; }
 
-        /* The "Content" side of the card */
-        .card-content { text-align: right; z-index: 2; grid-column: 2 / 3; grid-row: 1 / 2; }
-        .card-label { color: var(--accent); font-family: monospace; font-size: 0.9rem; }
-        .card-title { color: #e6f1ff; font-size: 1.8rem; margin: 10px 0; }
-        .card-desc { 
-            background: #112240; padding: 25px; border-radius: 5px; 
-            color: var(--text-muted); font-size: 0.95rem; box-shadow: 0 10px 30px rgba(2,12,27,0.7);
-            text-align: left; /* Keep text readable */
-        }
-        .tech-stack { margin-top: 20px; font-family: monospace; font-size: 0.8rem; color: var(--text-muted); }
-        .tech-stack span { margin-left: 15px; }
-        .card-links { margin-top: 20px; }
-        .card-links a { color: #e6f1ff; font-size: 1.4rem; margin-left: 15px; }
-        .card-links a:hover { color: var(--accent); }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-30px); } 100% { transform: translateY(0px); } }
 
-        /* --- TABS --- */
-        .tabs { display: flex; margin-top: 30px; }
-        .tab-list { width: 150px; border-left: 2px solid #233554; }
-        .tab-btn { 
-            padding: 15px; cursor: pointer; color: var(--text-muted); font-family: monospace; 
-            transition: 0.2s; display: block; width: 100%; text-align: left; background: none; border: none;
+        /* --- 4. FEATURED RESEARCH (The "Showstopper") --- */
+        section { padding: 100px 10%; position: relative; }
+        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; display: flex; align-items: center; gap: 20px; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+        .research-card {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px;
+            background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px; padding: 40px; backdrop-filter: blur(10px);
+            transition: 0.3s;
         }
-        .tab-btn:hover, .tab-btn.active { color: var(--accent); background: #112240; border-left: 2px solid var(--accent); margin-left: -2px; }
+        .research-card:hover { border-color: var(--secondary); box-shadow: 0 10px 40px -10px rgba(129, 140, 248, 0.2); }
+
+        .research-visual {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            border-radius: 16px; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; min-height: 300px; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .research-visual i { font-size: 6rem; color: var(--secondary); opacity: 0.8; }
         
-        .tab-content { flex: 1; padding-left: 30px; }
-        .job-title { color: #e6f1ff; font-size: 1.3rem; font-weight: 500; }
-        .job-title span { color: var(--accent); }
-        .job-date { font-family: monospace; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; display: block; }
-        .job-desc li { margin-bottom: 10px; position: relative; padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; }
-        .job-desc li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; text-align: center;
+        }
+        .stat-num { display: block; font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
 
-        /* --- MOBILE --- */
+        /* --- 5. EXPERIENCE (Vertical Timeline) --- */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 2px; background: rgba(255,255,255,0.1); }
+        
+        .job-card { margin-left: 40px; margin-bottom: 50px; position: relative; }
+        .job-card::before { 
+            content: ''; position: absolute; left: -46px; top: 5px; width: 14px; height: 14px; 
+            background: var(--bg-dark); border: 2px solid var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary);
+        }
+        
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .job-title { font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
+        .job-company { color: var(--primary); font-family: 'JetBrains Mono'; }
+        .job-date { font-size: 0.9rem; color: var(--text-muted); }
+        .job-desc { color: var(--text-muted); line-height: 1.6; margin-bottom: 15px; }
+        .tech-stack-mini span { 
+            font-size: 0.75rem; background: rgba(255,255,255,0.05); padding: 4px 10px; 
+            border-radius: 4px; margin-right: 8px; color: var(--text-muted);
+        }
+
+        /* --- 6. ACADEMIC EXCELLENCE (The Marksheet Section) --- */
+        .academic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .edu-card {
+            background: var(--bg-card); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .edu-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        
+        .degree-name { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+        .uni-name { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+        
+        .grade-pill { 
+            display: inline-block; background: rgba(16, 185, 129, 0.1); color: #10b981; 
+            padding: 5px 12px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .module-list { margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
+        .module-item { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+        .module-score { color: var(--primary); font-weight: 700; font-family: 'JetBrains Mono'; }
+
+        /* --- 7. FOOTER --- */
+        footer { padding: 50px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); }
+        .social-icons { margin-top: 20px; }
+        .social-icons a { font-size: 1.5rem; margin: 0 15px; color: var(--text-muted); transition: 0.3s; }
+        .social-icons a:hover { color: var(--primary); }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            .hero, section { padding: 80px 20px; }
-            .hero h1 { font-size: 3rem; }
-            .project-card { grid-template-columns: 1fr; }
-            .card-content { text-align: left; grid-column: 1; }
-            .card-desc { text-align: left; }
-            .tabs { flex-direction: column; }
-            .tab-list { width: 100%; border-left: none; border-bottom: 2px solid #233554; display: flex; overflow-x: auto; }
-            .nav-items { display: none; } /* Hide menu on mobile for simplicity */
+            h1 { font-size: 3rem; }
+            .research-card { grid-template-columns: 1fr; }
+            .hero, section { padding: 80px 5%; }
+            .nav-links { display: none; } /* Simplified for mobile */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">RM</a>
-        <div class="nav-items">
-            <a href="#about"><span>01.</span> About</a>
-            <a href="#research"><span>02.</span> Research</a>
-            <a href="#experience"><span>03.</span> Experience</a>
-            <a href="./Resume.pdf" class="btn-resume" target="_blank">Resume</a>
+        <a href="#" class="logo">RAVI.DEV</a>
+        <div class="nav-links">
+            <a href="#research">Quantum Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Academics</a>
         </div>
+        <a href="./Resume.pdf" target="_blank" class="btn-glow">Download Resume</a>
     </nav>
 
     <div class="hero">
-        <h3>Hi, my name is</h3>
-        <h1>Ravi Maurya.</h1>
-        <h2>I build intelligent data systems.</h2>
-        <p>Senior Data Engineer & Researcher. I bridge the gap between Enterprise Data Warehousing (Qlik/SQL) and Quantum Machine Learning.</p>
-        <div>
-            <a href="#research" class="btn-resume" style="margin-left: 0; padding: 15px 30px;">Check out my work</a>
+        <div class="blob"></div>
+        <div class="hero-content">
+            <span class="badge">Open to Work: Senior Data Engineer</span>
+            <h1>Architecting the Future of <br><span class="gradient-text">Data & Quantum AI</span></h1>
+            <p>
+                I bridge the gap between Enterprise Data Warehousing and Cutting-Edge AI. 
+                With <strong>6.5+ years</strong> at giants like <strong>HDFC & Qlik</strong>, and a First-Class MSc in Data Analytics, 
+                I build systems that are scalable, secure, and intelligent.
+            </p>
+            <div class="hero-btns">
+                <a href="#research" class="btn-glow">View Featured Research</a>
+                <a href="#experience" style="padding: 12px 24px; color: var(--text-main); font-weight: 600; border: 1px solid rgba(255,255,255,0.1); border-radius: 30px;">See Experience</a>
+            </div>
         </div>
     </div>
 
     <section id="research">
-        <div class="section-header">
-            <h2><span>01.</span> Featured Research</h2>
-        </div>
-
-        <div class="project-card">
-            <div class="card-visual">
-                <i class="fas fa-network-wired"></i> </div>
-
-            <div class="card-content">
-                <p class="card-label">MSc Research Project</p>
-                <h3 class="card-title">Quantum AI Cancer Detection</h3>
-                <div class="card-desc">
-                    A novel Hybrid Quantum-Classical Neural Network (HQ-CNN). It integrates a 6-qubit Variational Quantum Circuit into EfficientNet-B0. 
-                    <br><br>
-                    <strong>Result:</strong> Achieved 95.98% accuracy, outperforming classical benchmarks in detecting Esophageal Cancer from noisy medical images.
+        <h2 class="section-title">Featured Innovation</h2>
+        <div class="research-card">
+            <div class="research-visual">
+                <div style="text-align: center;">
+                    <i class="fa-solid fa-atom fa-spin" style="--fa-animation-duration: 15s;"></i>
+                    <p style="margin-top: 20px; font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--secondary);">6-Qubit Variational Circuit</p>
                 </div>
-                <div class="tech-stack">
-                    <span>Python</span><span>TensorFlow</span><span>PennyLane</span><span>Streamlit</span>
+            </div>
+            <div class="research-info">
+                <span class="badge" style="border-color: var(--secondary); color: var(--secondary);">MSc Capstone Project</span>
+                <h3 style="font-size: 2rem; margin: 15px 0;">Hybrid Quantum-Classical CNN for Cancer Detection</h3>
+                <p style="color: var(--text-muted); line-height: 1.6;">
+                    Medical imaging suffers from "speckle noise." I engineered a hybrid AI architecture that replaces standard neural layers with a <strong>Quantum Variational Circuit (PennyLane)</strong>.
+                    This "Quantum Bottleneck" forces the model to learn robust features, significantly outperforming classical ResNet50.
+                </p>
+                
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <span class="stat-num">95.98%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">94.3%</span>
+                        <span class="stat-label">Dysplasia Sensitivity</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">-18%</span>
+                        <span class="stat-label">Fewer Parameters</span>
+                    </div>
                 </div>
-                <div class="card-links">
-                    <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://share.streamlit.io/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                    <a href="./Research_Paper.pdf" target="_blank"><i class="fas fa-file-pdf"></i></a>
+
+                <div style="margin-top: 40px; display: flex; gap: 15px;">
+                    <a href="https://share.streamlit.io/" target="_blank" class="btn-glow"><i class="fa-solid fa-play"></i> Live Demo</a>
+                    <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" target="_blank" style="padding: 10px 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px;"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="./Research_Paper.pdf" target="_blank" style="padding: 10px 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px;"><i class="fa-solid fa-file-pdf"></i> Paper</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <div class="section-header">
-            <h2><span>02.</span> Where I've Worked</h2>
-        </div>
-
-        <div class="tabs">
-            <div class="tab-list">
-                <button class="tab-btn active" onclick="openTab(event, 'Qlik')">Qlik</button>
-                <button class="tab-btn" onclick="openTab(event, 'HDFC')">HDFC Ltd</button>
-                <button class="tab-btn" onclick="openTab(event, 'Melstar')">Melstar</button>
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+            
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Senior Consultant</div>
+                        <div class="job-company">Qlik (Data Integration & Analytics)</div>
+                    </div>
+                    <div class="job-date">May 2022 - Dec 2024</div>
+                </div>
+                <p class="job-desc">
+                    Led cloud migrations for Fortune 500 clients (Amex, Herc Rentals). Architected Python/SQL ETL pipelines that reduced reporting latency by 40%.
+                    Designed "BUR" (Business Unit Reporting) systems for financial risk tracking.
+                </p>
+                <div class="tech-stack-mini">
+                    <span>Qlik Cloud SaaS</span><span>Python ETL</span><span>Snowflake</span><span>AWS</span>
+                </div>
             </div>
 
-            <div class="tab-content">
-                <div id="Qlik" class="job-item">
-                    <h3 class="job-title">Senior Consultant <span>@ Qlik</span></h3>
-                    <span class="job-date">May 2022 – Dec 2024</span>
-                    <ul class="job-desc">
-                        <li>Migrated mission-critical analytics to Qlik Cloud (SaaS) for global clients (Amex, Herc Rentals).</li>
-                        <li>Engineered automated Python/SQL pipelines, reducing reporting latency by 40%.</li>
-                        <li>Integrated ML models into dashboards for financial anomaly detection.</li>
-                    </ul>
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Senior Officer - BI Developer</div>
+                        <div class="job-company">HDFC Limited</div>
+                    </div>
+                    <div class="job-date">Apr 2020 - Apr 2022</div>
                 </div>
-
-                <div id="HDFC" class="job-item" style="display: none;">
-                    <h3 class="job-title">Senior Officer (BI) <span>@ HDFC Ltd</span></h3>
-                    <span class="job-date">Apr 2020 – Apr 2022</span>
-                    <ul class="job-desc">
-                        <li>Built the "Single Source of Truth" SQL pipeline for credit risk assessment.</li>
-                        <li>Automated 100% of regulatory reporting for banking authorities.</li>
-                        <li>Managed large-scale Qlik Sense server deployments.</li>
-                    </ul>
+                <p class="job-desc">
+                    Built the "Single Source of Truth" for credit risk assessment. Automated 100% of regulatory reporting for banking authorities.
+                    Managed SQL-based pipelines for Loans & Deposits data.
+                </p>
+                <div class="tech-stack-mini">
+                    <span>SQL Server</span><span>SSIS</span><span>Regulatory Reporting</span><span>Credit Risk</span>
                 </div>
+            </div>
 
-                <div id="Melstar" class="job-item" style="display: none;">
-                    <h3 class="job-title">Software Engineer <span>@ Melstar</span></h3>
-                    <span class="job-date">Oct 2018 – Mar 2020</span>
-                    <ul class="job-desc">
-                        <li>Developed dashboards to track Non-Performing Assets (NPA) and audit data.</li>
-                        <li>Modeled Star/Snowflake schemas for financial data integrity.</li>
-                    </ul>
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-company">Melstar Technologies</div>
+                    </div>
+                    <div class="job-date">Oct 2018 - Mar 2020</div>
+                </div>
+                <p class="job-desc">
+                    Developed dashboards to track Non-Performing Assets (NPA). Modeled Star/Snowflake schemas for audit evidence.
+                </p>
+                <div class="tech-stack-mini">
+                    <span>Data Modeling</span><span>Audit Analytics</span><span>Qlik Scripting</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Academic Excellence</h2>
+        <p style="color: var(--text-muted); margin-bottom: 40px;">Proven track record of high academic performance and technical rigor.</p>
+        
+        <div class="academic-grid">
+            <div class="edu-card" style="border-color: var(--secondary);">
+                <span class="badge" style="margin-bottom: 10px; background: rgba(129, 140, 248, 0.1); color: var(--secondary);">Current</span>
+                <div class="degree-name">MSc in Data Analytics</div>
+                <div class="uni-name">Dublin Business School (2026)</div>
+                <div class="grade-pill">First-Class Honors (1.1) Track</div>
+                
+                <div class="module-list">
+                    <div class="module-item"><span>Data Storage Solutions</span><span class="module-score">90%</span></div>
+                    <div class="module-item"><span>Machine Learning</span><span class="module-score">84%</span></div>
+                    <div class="module-item"><span>Statistics</span><span class="module-score">84%</span></div>
+                    <div class="module-item"><span>Programming for Data</span><span class="module-score">70%</span></div>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="degree-name">B.E. Electronics & Telecom</div>
+                <div class="uni-name">University of Mumbai (2017)</div>
+                <div class="grade-pill" style="background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.2);">CGPI: 7.90</div>
+                
+                <div class="module-list">
+                    <div class="module-item"><span>Image & Video Processing</span><span class="module-score">Grade C</span></div>
+                    <div class="module-item"><span>Neural Networks</span><span class="module-score">Grade B</span></div>
+                    <div class="module-item"><span>Wireless Networks</span><span class="module-score">Grade C</span></div>
+                    <div class="module-item"><span>Final Year Project</span><span class="module-score">Grade O (10)</span></div>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="degree-name">Diploma in Engineering</div>
+                <div class="uni-name">MSBTE (2014)</div>
+                <div class="grade-pill">First Class Distinction</div>
+                
+                <div class="module-list">
+                    <div class="module-item"><span>Final Aggregate</span><span class="module-score">87.54%</span></div>
+                    <div class="module-item"><span>Mathematics</span><span class="module-score">Distinction</span></div>
+                    <div class="module-item"><span>Engineering Logic</span><span class="module-score">Distinction</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        function openTab(evt, companyName) {
-            // Hide all tab content
-            var i, jobItems, tabBtns;
-            jobItems = document.getElementsByClassName("job-item");
-            for (i = 0; i < jobItems.length; i++) {
-                jobItems[i].style.display = "none";
-            }
-            // Remove active class from all buttons
-            tabBtns = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tabBtns.length; i++) {
-                tabBtns[i].className = tabBtns[i].className.replace(" active", "");
-            }
-            // Show current tab and add active class
-            document.getElementById(companyName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+    <section id="certs">
+        <h2 class="section-title">Certifications</h2>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="background: var(--bg-card); padding: 20px 30px; border-radius: 12px; border: 1px solid var(--primary); display: flex; align-items: center; gap: 15px;">
+                <i class="fa-solid fa-certificate" style="color: var(--primary); font-size: 1.5rem;"></i>
+                <div>
+                    <div style="font-weight: 700;">Qlik Sense Data Architect</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">QSDA Certified Professional</div>
+                </div>
+            </div>
+            <div style="background: var(--bg-card); padding: 20px 30px; border-radius: 12px; border: 1px solid #f59e0b; display: flex; align-items: center; gap: 15px;">
+                <i class="fa-brands fa-aws" style="color: #f59e0b; font-size: 1.5rem;"></i>
+                <div>
+                    <div style="font-weight: 700;">AWS Machine Learning</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">AWS Educate Foundations (2025)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="color: #fff; margin-bottom: 10px;">Ready to build something impactful?</h3>
+        <p>Currently based in Dublin, Ireland (Stamp 1G Visa).</p>
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/ravimaurya704" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/ravimaurya704" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:ravimaurya.ie@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">© 2026 Ravi Maurya. Built with Code & Quantum Physics.</p>
+    </footer>
+
 </body>
 </html>
