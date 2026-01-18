@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Maurya | Senior Data Engineer & Quantum Researcher</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0B1120',
+                        card: '#1E293B',
+                        primary: '#38BDF8', /* Cyan */
+                        secondary: '#818CF8', /* Indigo */
+                        accent: '#2DD4BF', /* Teal */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { background-color: #0B1120; color: #E2E8F0; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); }
+        .glow-text { text-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+        .blob { position: absolute; filter: blur(80px); opacity: 0.2; z-index: -1; }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-dark">
+
+    <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0 animate-pulse"></div>
+    <div class="blob bg-secondary w-96 h-96 rounded-full bottom-0 right-0"></div>
+
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-mono text-xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                RAVI.DATA_ENG()
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#experience" class="hover:text-primary transition">EXPERIENCE</a>
+                <a href="#research" class="hover:text-primary transition">QUANTUM RESEARCH</a>
+                <a href="#education" class="hover:text-primary transition">CREDENTIALS</a>
+            </div>
+            <a href="./Resume.pdf" target="_blank" class="px-5 py-2 rounded-full border border-primary/30 text-primary text-sm font-bold hover:bg-primary hover:text-dark transition shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+                Download CV
+            </a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    OPEN TO WORK | STAMP 1G VISA
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    Bridging <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent glow-text">Legacy Data</span> & 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-purple-500">Quantum AI</span>
+                </h1>
+                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                    Senior Data Engineer with <strong>6.5+ years</strong> of expertise at <strong>HDFC & Qlik</strong>. 
+                    Currently engineering <strong>Hybrid Quantum Neural Networks</strong> to solve healthcare's toughest problems.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#research" class="px-8 py-4 bg-primary text-dark font-bold rounded-lg hover:scale-105 transition shadow-lg shadow-primary/20">
+                        View Quantum Research
+                    </a>
+                    <a href="#experience" class="px-8 py-4 glass text-white font-bold rounded-lg hover:border-primary/50 transition">
+                        Professional Timeline
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex flex-wrap gap-3 opacity-70">
+                    <span class="px-3 py-1 border border-slate-700 rounded text-xs font-mono text-slate-300">Python</span>
+                    <span class="px-3 py-1 border border-slate-700 rounded text-xs font-mono text-slate-300">SQL</span>
+                    <span class="px-3 py-1 border border-slate-700 rounded text-xs font-mono text-slate-300">Qlik Cloud</span>
+                    <span class="px-3 py-1 border border-slate-700 rounded text-xs font-mono text-slate-300">AWS</span>
+                    <span class="px-3 py-1 border border-slate-700 rounded text-xs font-mono text-slate-300">PennyLane</span>
+                    <span class="px-3 py-1 border border-slate-700 rounded text-xs font-mono text-slate-300">TensorFlow</span>
+                </div>
+            </div>
+
+            <div class="relative hidden lg:block" data-aos="fade-left">
+                <div class="glass p-6 rounded-2xl border-l-4 border-primary font-mono text-sm text-slate-300 shadow-2xl">
+                    <div class="flex gap-2 mb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">RaviMaurya</span>:</p>
+                    <p class="pl-4"><span class="text-blue-400">def</span> <span class="text-yellow-300">__init__</span>(self):</p>
+                    <p class="pl-8">self.role = <span class="text-green-400">"Senior Data Engineer"</span></p>
+                    <p class="pl-8">self.experience = <span class="text-green-400">"6.5 Years"</span></p>
+                    <p class="pl-8">self.specialty = [<span class="text-green-400">"Cloud Migration"</span>, <span class="text-green-400">"Quantum ML"</span>]</p>
+                    <br>
+                    <p class="pl-4"><span class="text-blue-400">def</span> <span class="text-yellow-300">deploy_solution</span>(self):</p>
+                    <p class="pl-8"><span class="text-purple-400">return</span> <span class="text-green-400">"Scalable, Secure, Intelligent"</span></p>
+                </div>
+                <div class="absolute -bottom-10 -left-10 glass p-4 rounded-lg border border-primary/30 flex items-center gap-4 animate-bounce">
+                    <i class="fa-solid fa-graduation-cap text-3xl text-primary"></i>
+                    <div>
+                        <div class="text-xs text-slate-400">MSc Grade</div>
+                        <div class="text-xl font-bold text-white">First Class (1.1)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-dark">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-primary font-mono">01.</span> Professional Journey
+                <div class="h-px bg-slate-800 flex-grow"></div>
+            </h2>
+
+            <div class="space-y-12 relative border-l border-slate-800 ml-4 md:ml-0">
+                
+                <div class="relative pl-8 md:pl-0" data-aos="fade-up">
+                    <div class="hidden md:block absolute left-[-9px] top-2 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_#38BDF8]"></div>
+                    <div class="grid md:grid-cols-12 gap-6">
+                        <div class="md:col-span-4">
+                            <h3 class="text-xl font-bold text-white">Senior Consultant</h3>
+                            <div class="text-primary font-mono text-sm mb-1">Qlik (Data Integration)</div>
+                            <div class="text-slate-500 text-xs">May 2022 – Dec 2024</div>
+                            <div class="mt-2 inline-block px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">Cloud Migration</div>
+                        </div>
+                        <div class="md:col-span-8 glass p-6 rounded-xl hover:border-primary/30 transition">
+                            <ul class="space-y-3 text-slate-400 text-sm list-disc pl-4">
+                                <li>Directed migration of mission-critical analytics to <strong>Qlik Cloud (SaaS)</strong> for global accounts like <span class="text-white">American Express</span> & <span class="text-white">Herc Rentals</span>.</li>
+                                <li>Engineered automated Python/SQL pipelines, reducing data refresh latency by <span class="text-accent font-bold">40%</span>.</li>
+                                <li>Designed "BUR" (Business Unit Reporting) systems to track risk thresholds.</li>
+                            </ul>
+                            <div class="mt-4 flex gap-2">
+                                <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">SaaS</span>
+                                <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">API Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="hidden md:block absolute left-[-9px] top-2 w-4 h-4 rounded-full bg-slate-600"></div>
+                    <div class="grid md:grid-cols-12 gap-6">
+                        <div class="md:col-span-4">
+                            <h3 class="text-xl font-bold text-white">Senior Officer (BI)</h3>
+                            <div class="text-primary font-mono text-sm mb-1">HDFC Limited</div>
+                            <div class="text-slate-500 text-xs">Apr 2020 – Apr 2022</div>
+                        </div>
+                        <div class="md:col-span-8 glass p-6 rounded-xl hover:border-primary/30 transition">
+                            <ul class="space-y-3 text-slate-400 text-sm list-disc pl-4">
+                                <li>Built the <strong>"Single Source of Truth"</strong> SQL pipeline for credit risk assessment across Loans & Deposits.</li>
+                                <li>Automated <span class="text-accent font-bold">100%</span> of regulatory reporting submissions for banking authorities.</li>
+                                <li>Managed large-scale Qlik Sense server deployments and user security.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="hidden md:block absolute left-[-9px] top-2 w-4 h-4 rounded-full bg-slate-600"></div>
+                    <div class="grid md:grid-cols-12 gap-6">
+                        <div class="md:col-span-4">
+                            <h3 class="text-xl font-bold text-white">Software Engineer</h3>
+                            <div class="text-primary font-mono text-sm mb-1">Melstar Technologies</div>
+                            <div class="text-slate-500 text-xs">Oct 2018 – Mar 2020</div>
+                        </div>
+                        <div class="md:col-span-8 glass p-6 rounded-xl hover:border-primary/30 transition">
+                            <ul class="space-y-3 text-slate-400 text-sm list-disc pl-4">
+                                <li>Developed analytical dashboards to track Non-Performing Assets (NPA).</li>
+                                <li>Modeled Star/Snowflake schemas for financial audit evidence.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-dark pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+                <span class="text-secondary font-mono">02.</span> Featured Innovation
+                <div class="h-px bg-slate-800 flex-grow"></div>
+            </h2>
+
+            <div class="glass border border-secondary/30 rounded-2xl overflow-hidden grid lg:grid-cols-2 shadow-[0_0_50px_rgba(129,140,248,0.15)]" data-aos="zoom-in">
+                
+                <div class="bg-gradient-to-br from-[#0f172a] to-[#1e1b4b] p-10 flex flex-col justify-center items-center relative min-h-[400px]">
+                    <i class="fa-solid fa-atom text-8xl text-secondary animate-spin-slow opacity-80" style="animation-duration: 10s;"></i>
+                    <div class="mt-8 font-mono text-secondary text-sm bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20">
+                        6-Qubit Variational Circuit
+                    </div>
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                </div>
+
+                <div class="p-10 flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                        <span class="text-secondary font-bold tracking-widest text-xs uppercase">MSc Capstone Project</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">Hybrid Quantum-Classical CNN</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Designed to solve the "speckle noise" problem in Esophageal Cancer detection. 
+                        I replaced the bottleneck layer of <span class="text-white">EfficientNet-B0</span> with a 
+                        <span class="text-white">Quantum Circuit (PennyLane)</span>. This forces the AI to learn 
+                        physics-based feature correlations, drastically improving reliability.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="bg-dark/50 p-3 rounded-lg border border-slate-700 text-center">
+                            <div class="text-2xl font-bold text-secondary">95.98%</div>
+                            <div class="text-[10px] uppercase text-slate-500 font-bold">Accuracy</div>
+                        </div>
+                        <div class="bg-dark/50 p-3 rounded-lg border border-slate-700 text-center">
+                            <div class="text-2xl font-bold text-secondary">94.3%</div>
+                            <div class="text-[10px] uppercase text-slate-500 font-bold">Sensitivity</div>
+                        </div>
+                        <div class="bg-dark/50 p-3 rounded-lg border border-slate-700 text-center">
+                            <div class="text-2xl font-bold text-secondary">No. 1</div>
+                            <div class="text-[10px] uppercase text-slate-500 font-bold">Vs ResNet50</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://quantum-ai-cancer-detection.streamlit.app" target="_blank" class="px-6 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/80 transition flex items-center gap-2 shadow-lg shadow-secondary/20 animate-pulse">
+                            <i class="fa-solid fa-play"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" target="_blank" class="px-6 py-3 border border-slate-600 rounded-lg hover:bg-slate-800 transition flex items-center gap-2">
+                            <i class="fa-brands fa-github"></i> Code
+                        </a>
+                        <a href="./Research_Paper.pdf" target="_blank" class="px-6 py-3 border border-slate-600 rounded-lg hover:bg-slate-800 transition flex items-center gap-2">
+                            <i class="fa-solid fa-file-pdf"></i> Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 bg-dark">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+                <span class="text-accent font-mono">03.</span> Academic Credentials
+                <div class="h-px bg-slate-800 flex-grow"></div>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass p-8 rounded-xl border-t-4 border-accent hover:-translate-y-2 transition duration-300" data-aos="fade-up">
+                    <div class="text-xs font-bold text-accent mb-2">EXPECTED 2026</div>
+                    <h3 class="text-xl font-bold text-white mb-1">MSc Data Analytics</h3>
+                    <div class="text-sm text-slate-400 mb-6">Dublin Business School</div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Track</span>
+                            <span class="font-bold text-white">First Class (1.1)</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-accent h-full w-[79%]"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-500 pt-2 border-t border-slate-700">
+                            <span>Data Storage</span>
+                            <span class="text-accent font-mono">90%</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-500">
+                            <span>Machine Learning</span>
+                            <span class="text-accent font-mono">84%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-xl border-t-4 border-slate-600 hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-xs font-bold text-slate-400 mb-2">2017</div>
+                    <h3 class="text-xl font-bold text-white mb-1">B.E. Electronics</h3>
+                    <div class="text-sm text-slate-400 mb-6">Mumbai University</div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Result</span>
+                            <span class="font-bold text-white">CGPI 7.90</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-slate-400 h-full w-[79%]"></div>
+                        </div>
+                        <div class="mt-4 inline-block px-3 py-1 bg-slate-800 rounded text-xs text-slate-300 border border-slate-700">
+                            Final Project: Grade O (10)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-xl border-t-4 border-slate-600 hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-xs font-bold text-slate-400 mb-2">2014</div>
+                    <h3 class="text-xl font-bold text-white mb-1">Diploma Engineering</h3>
+                    <div class="text-sm text-slate-400 mb-6">MSBTE</div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Class</span>
+                            <span class="font-bold text-white">Distinction</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-slate-400 h-full w-[88%]"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-500 pt-2 border-t border-slate-700">
+                            <span>Aggregate</span>
+                            <span class="text-white font-mono">87.54%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 flex flex-wrap gap-6 justify-center" data-aos="fade-up">
+                <div class="flex items-center gap-3 px-6 py-3 glass rounded-full border border-primary/20">
+                    <i class="fa-solid fa-certificate text-primary"></i>
+                    <span class="text-sm font-bold text-white">Qlik Sense Data Architect (QSDA)</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-3 glass rounded-full border border-yellow-500/20">
+                    <i class="fa-brands fa-aws text-yellow-500"></i>
+                    <span class="text-sm font-bold text-white">AWS Machine Learning Foundations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-800 text-center bg-dark">
+        <h3 class="text-2xl font-bold text-white mb-2">Ready to scale your data infrastructure?</h3>
+        <p class="text-slate-400 mb-8">Currently based in Dublin, Ireland.</p>
+        <div class="flex justify-center gap-8 text-2xl mb-8">
+            <a href="https://linkedin.com/in/ravimaurya704" class="text-slate-400 hover:text-primary transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/ravimaurya704" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:ravimaurya.ie@gmail.com" class="text-slate-400 hover:text-accent transition"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="text-slate-600 text-xs font-mono">© 2026 Ravi Maurya. Crafted with Tailwind & Quantum Physics.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+        });
+    </script>
+</body>
+</html>
