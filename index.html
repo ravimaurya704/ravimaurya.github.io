@@ -120,6 +120,11 @@
     }
     .hero-tagline em { font-style: normal; color: var(--quantum); font-weight: 600; }
 
+    .hero-bio {
+      font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 48px;
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    }
+
     /* WHAT I BRING */
     .section-container { max-width: 1100px; margin: 0 auto; padding: 100px 24px; }
     .section-header {
@@ -131,7 +136,7 @@
       letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
     }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
     .skill-card {
       padding: 24px; background: var(--bg-secondary); border: 1px solid var(--border);
       border-radius: 12px; transition: all 0.3s ease;
@@ -140,6 +145,7 @@
     .skill-icon { font-size: 24px; color: var(--accent); margin-bottom: 16px; }
     .skill-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
     .skill-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+    .skill-highlight { color: var(--teal); font-weight: 600; font-size: 11px; text-transform: uppercase; margin-top: 8px; display: block; }
 
     /* PROFESSIONAL JOURNEY */
     .exp-card {
@@ -259,7 +265,7 @@
     @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; } /* Hide links on mobile for cleaner look */
+      .nav-links { display: none; }
       .exp-card { grid-template-columns: 1fr; }
       .story-layout { grid-template-columns: 1fr; }
       header { padding: 16px 20px; }
@@ -299,7 +305,7 @@
     <h1>Transforming Enterprise Data<br>Into Actionable Intelligence</h1>
     
     <h2 class="hero-tagline">
-      With a competitive edge in <em>Quantum Machine Learning</em>
+      Explored <em>Quantum Machine Learning</em> in my final year research as a step beyond conventional AI
     </h2>
     
     <p class="hero-bio">
@@ -314,23 +320,24 @@
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
-        <div class="skill-title">Machine Learning</div>
-        <div class="skill-desc">Predictive modeling, classification, and time-series forecasting using Python & Scikit-Learn.</div>
+        <div class="skill-title">ML & Deep Learning</div>
+        <div class="skill-desc">Predictive modeling using Python & Scikit-Learn. Advanced neural networks (CNN, RNN) with TensorFlow/Keras.</div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div class="skill-title">Cloud Analytics</div>
-        <div class="skill-desc">Migration and architecture on AWS and Qlik Cloud (SaaS) for enterprise scale.</div>
+        <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="skill-title">Professional BI</div>
+        <div class="skill-desc">6.5+ years of enterprise experience in <strong>Qlik Sense</strong>, Qlik Cloud, and NPrinting architecture.</div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-        <div class="skill-title">Data Engineering</div>
-        <div class="skill-desc">Robust ETL pipelines, SQL optimization, and data modeling for single-source-of-truth.</div>
+        <div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <div class="skill-title">Modern Analytics</div>
+        <div class="skill-desc">Academic specialization in <strong>Power BI</strong> and <strong>Tableau</strong> for interactive visual storytelling.</div>
+        <span class="skill-highlight">MSc Learned</span>
       </div>
       <div class="skill-card">
         <div class="skill-icon"><i class="fa-solid fa-atom"></i></div>
-        <div class="skill-title">Quantum AI</div>
-        <div class="skill-desc">Researching hybrid quantum-classical networks for next-gen problem solving.</div>
+        <div class="skill-title">Quantum Research</div>
+        <div class="skill-desc">Final year research in hybrid quantum-classical networks (PennyLane) for next-gen problem solving.</div>
       </div>
     </div>
   </section>
