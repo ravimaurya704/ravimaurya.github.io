@@ -3,697 +3,438 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ravi Maurya — Data Analyst & Scientist</title>
-  <meta name="description" content="Data Analytics Professional (6+ Yrs) & MSc Candidate based in Dublin. Expert in Qlik Sense, Power BI, SQL, and Python. Available Immediately (Stamp 1G).">
+  <title>Ravi Maurya — Data Scientist & Quantum Researcher</title>
+  <meta name="description" content="Senior Data Engineer & Quantum Researcher. Bridging Enterprise Data with Advanced AI. Based in Dublin (Stamp 1G).">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* RESTORED BLUE/CYAN THEME */
-      --bg-primary: #0B1120; /* Deep Navy */
-      --bg-secondary: #0F172A; /* Slate 900 */
-      --bg-card: #1E293B; /* Slate 800 */
-      --text-primary: #F1F5F9; /* Slate 100 */
-      --text-secondary: #94A3B8; /* Slate 400 */
-      --text-muted: #64748B; /* Slate 500 */
+      /* --- THE "QUANTUM NEBULA" PALETTE --- 
+         Combines deep space darks with vibrant violet (Quantum) and cyan (Data) 
+      */
+      --bg-primary: #050505;       /* Almost Black */
+      --bg-secondary: #0A0A0A;     /* Deep Grey */
+      --bg-card: #111111;          /* Card BG */
       
-      --accent: #38BDF8; /* Sky Blue / Cyan */
-      --accent-soft: #7DD3FC;
-      --accent-glow: rgba(56, 189, 248, 0.15);
-      --border: #334155; /* Slate 700 */
+      --text-primary: #F8FAFC;     /* Bright White */
+      --text-secondary: #94A3B8;   /* Muted Slate */
+      --text-muted: #64748B;       /* Darker Slate */
+      
+      /* Primary Accent: Electric Violet (Quantum) */
+      --accent: #8B5CF6;           
+      /* Secondary Accent: Neon Cyan (Data/Cloud) */
+      --highlight: #06B6D4;        
+      
+      --accent-glow: rgba(139, 92, 246, 0.15);
+      --border: #222222;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
     body {
-      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Noise overlay */
+    /* 1. CINEMATIC NOISE TEXTURE */
     body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 1000;
+      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03; pointer-events: none; z-index: 999;
     }
 
-    /* Custom cursor glow */
+    /* 2. MOUSE GLOW FOLLOWER */
     .cursor-glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
+      position: fixed; width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+      transform: translate(-50%, -50%); pointer-events: none; z-index: -1;
+      opacity: 0.6; transition: opacity 0.3s ease;
     }
 
-    /* Header */
+    /* 3. NAVIGATION */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 24px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 100%);
-      opacity: 0;
-      animation: gentleFade 0.8s ease-out 0.8s forwards;
-    }
-
-    @keyframes gentleFade {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      position: fixed; top: 0; left: 0; right: 0;
+      padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
+      z-index: 100; backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(5,5,5,0.8) 0%, transparent 100%);
+      animation: fadeInDown 1s ease-out 0.5s forwards; opacity: 0;
     }
 
     .status-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #4ADE80;
-      border: 1px solid rgba(74, 222, 128, 0.2);
-      padding: 6px 12px;
-      border-radius: 100px;
-      background: rgba(74, 222, 128, 0.05);
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      color: #4ADE80; background: rgba(74, 222, 128, 0.08);
+      padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(74, 222, 128, 0.2);
     }
-
     .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #4ADE80;
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-      box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.1); }
+      width: 6px; height: 6px; background: #4ADE80; border-radius: 50%;
+      box-shadow: 0 0 10px #4ADE80; animation: pulse 2s infinite;
     }
 
     .logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 24px;
-      color: var(--text-primary);
-      position: relative;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px;
+      background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
-    .logo::after {
-      content: '';
-      position: absolute;
-      top: -2px;
-      right: -8px;
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: float 2s ease-in-out infinite;
+    .btn-download {
+      font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none;
+      padding: 10px 24px; border: 1px solid var(--border); border-radius: 100px;
+      background: rgba(255,255,255,0.03); transition: all 0.3s ease;
     }
+    .btn-download:hover { background: var(--text-primary); color: var(--bg-primary); border-color: var(--text-primary); }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-
-    .download-cv {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.3s ease;
-    }
-
-    .download-cv:hover {
-      color: var(--text-primary);
-    }
-
-    /* Hero Section */
+    /* 4. HERO SECTION */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 120px 48px 80px;
-      position: relative;
+      min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      padding: 120px 24px; text-align: center; position: relative;
     }
 
-    .hero-content {
-      text-align: center;
-      max-width: 800px;
-    }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-      opacity: 0;
-      animation: gentleSlideUp 0.8s ease-out 0.1s forwards;
-    }
-
-    .hero-name .dot {
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    @keyframes gentleSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-title-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: gentleSlideUp 0.8s ease-out 0.2s forwards;
-      transition: all 0.3s ease;
+    .hero h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(40px, 8vw, 80px); font-weight: 800;
+      letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1;
+      background: linear-gradient(to bottom right, #fff 40%, #94A3B8 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;
     }
 
     .hero-tagline {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 4.5vw, 44px);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.3;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: gentleSlideUp 0.8s ease-out 0.3s forwards;
+      font-family: 'Syne', sans-serif; font-size: clamp(20px, 4vw, 32px); font-weight: 600;
+      color: var(--text-secondary); margin-bottom: 32px;
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    }
+    .hero-tagline em { font-style: normal; color: var(--accent); position: relative; }
+    .hero-tagline em::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
     }
 
-    .hero-tagline em {
-      font-style: italic;
-      color: var(--accent-soft);
-      font-weight: 500;
+    .hero-bio {
+      font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 48px;
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.6s forwards;
     }
 
-    .hero-description {
-      font-size: 17px;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: gentleSlideUp 0.8s ease-out 0.4s forwards;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-current {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 56px;
-      opacity: 0;
-      animation: gentleSlideUp 0.8s ease-out 0.5s forwards;
-    }
-
-    .hero-current a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    .scroll-indicator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-muted);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: gentleSlideUp 0.8s ease-out 0.6s forwards;
-    }
-
-    .scroll-arrow {
-      width: 1px;
-      height: 48px;
-      background: linear-gradient(to bottom, var(--text-muted), transparent);
-      position: relative;
-    }
-
-    .scroll-arrow::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-      0% { top: 0; opacity: 1; }
-      100% { top: 40px; opacity: 0; }
-    }
-
-    /* Standard Section Padding */
-    .content-section {
-      padding: 100px 48px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 64px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    /* Cards */
-    .card-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      margin-bottom: 24px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .card-item:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    /* Experience Specifics */
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 16px;
-    }
-
-    .job-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .job-company {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .job-date {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-family: monospace;
-    }
-
-    .job-list {
-      list-style-type: disc;
-      padding-left: 20px;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    .job-list li { margin-bottom: 8px; }
-
-    /* Project Visuals */
-    .project-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        overflow: hidden;
-        margin-bottom: 32px;
-        transition: transform 0.4s ease;
-    }
+    /* 5. CONTENT SECTIONS */
+    .section-container { max-width: 1200px; margin: 0 auto; padding: 100px 24px; }
     
-    .project-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent);
+    .section-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 60px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
     }
+    .section-label {
+      font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
+    }
+
+    /* 6. EXPERIENCE CARDS (Minimalist & Clean) */
+    .exp-card {
+      display: grid; grid-template-columns: 1fr 3fr; gap: 24px;
+      padding: 32px; border-radius: 20px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--bg-card) 0%, rgba(17,17,17,0.5) 100%);
+      margin-bottom: 24px; transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .exp-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    
+    .exp-role h3 { font-family: 'Syne', sans-serif; font-size: 20px; color: var(--text-primary); margin-bottom: 4px; }
+    .exp-role span { font-size: 14px; color: var(--highlight); font-weight: 600; }
+    .exp-date { font-family: monospace; color: var(--text-muted); font-size: 12px; margin-top: 8px; }
+    .exp-details ul { list-style: none; }
+    .exp-details li {
+      position: relative; padding-left: 24px; margin-bottom: 12px; color: var(--text-secondary); font-size: 15px;
+    }
+    .exp-details li::before {
+      content: '▹'; position: absolute; left: 0; color: var(--accent);
+    }
+
+    /* 7. PROJECT CARDS (Visual Heavy) */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 32px; }
+    
+    .project-card {
+      border: 1px solid var(--border); border-radius: 24px; overflow: hidden;
+      background: var(--bg-card); transition: all 0.4s ease;
+    }
+    .project-card:hover { transform: translateY(-8px); border-color: var(--highlight); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 
     .project-visual {
-      height: 300px;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 280px; background: #080808; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .project-content { padding: 40px; }
     
-    .project-title-text {
-        font-family: 'Syne';
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        color: var(--text-primary);
+    /* Custom CSS Visuals (Preserved from prev turn, updated colors) */
+    .visual-orbit { width: 200px; height: 200px; position: relative; display: flex; justify-content: center; align-items: center; }
+    .atom { width: 16px; height: 16px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 20px var(--accent); z-index: 10; }
+    .ring { position: absolute; border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 50%; }
+    .r1 { width: 100%; height: 60%; animation: spin 4s linear infinite; }
+    .r2 { width: 60%; height: 100%; animation: spin 6s linear infinite reverse; }
+    
+    .visual-chart { display: flex; align-items: flex-end; gap: 12px; height: 120px; }
+    .bar { width: 24px; background: linear-gradient(to top, var(--highlight), transparent); border-radius: 4px; animation: bounce 2s infinite ease-in-out; }
+    
+    .project-info { padding: 32px; }
+    .project-meta { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .project-title { font-family: 'Syne', sans-serif; font-size: 24px; margin-bottom: 12px; color: var(--text-primary); }
+    .project-desc { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+    
+    .btn-link {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+      color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px;
+      transition: all 0.3s;
+    }
+    .btn-link:hover { color: var(--highlight); border-color: var(--highlight); }
+
+    /* 8. EDUCATION & BACKSTORY */
+    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .edu-card {
+      padding: 24px; border: 1px solid var(--border); border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+    }
+    .edu-year { color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+    .edu-degree { font-family: 'Syne', sans-serif; font-size: 16px; margin-bottom: 4px; color: var(--text-primary); }
+    .edu-school { font-size: 13px; color: var(--text-muted); }
+
+    .story-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; }
+    .story-img {
+      width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px;
+      filter: grayscale(100%) contrast(1.1); transition: filter 0.5s;
+    }
+    .story-img:hover { filter: grayscale(0%); }
+    
+    .tech-pill {
+      display: inline-block; padding: 6px 14px; border: 1px solid var(--border);
+      border-radius: 100px; font-size: 12px; color: var(--text-secondary); margin: 0 6px 6px 0;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 100px;
-      background: rgba(56, 189, 248, 0.1); /* Blue tint */
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-right: 8px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
+    /* FOOTER */
+    footer { padding: 80px 24px; text-align: center; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
+    .socials { display: flex; justify-content: center; gap: 32px; margin-bottom: 32px; }
+    .socials a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+    .socials a:hover { color: var(--text-primary); }
 
-    /* CSS Animations for Visuals */
-    .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 100px; }
-    .bar { width: 20px; background: var(--accent); border-radius: 4px; animation: barAnim 2s infinite alternate ease-in-out; }
-    @keyframes barAnim { 0% { height: 20%; opacity: 0.5; } 100% { height: 100%; opacity: 1; } }
-
-    .orbit-container { position: relative; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; }
-    .core { width: 20px; height: 20px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 20px var(--accent); }
-    .ring { position: absolute; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 50%; }
-    .ring-1 { width: 100%; height: 60%; animation: spin 4s linear infinite; }
-    .ring-2 { width: 60%; height: 100%; animation: spin 6s linear infinite reverse; }
+    /* ANIMATIONS */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
     @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes bounce { 0%, 100% { transform: scaleY(0.5); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
 
-    /* Footer */
-    footer {
-      padding: 48px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      background: var(--bg-secondary);
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .content-section { padding: 60px 24px; }
-      header { padding: 16px 24px; }
-      .hero { padding: 100px 24px 60px; }
+      .exp-card, .story-layout, .edu-grid { grid-template-columns: 1fr; }
+      header { padding: 20px; }
+      .hero h1 { font-size: 48px; }
     }
   </style>
 </head>
 <body>
-  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <div class="cursor-glow" id="cursor"></div>
 
   <header>
     <div class="status-badge">
       <span class="status-dot"></span>
-      Stamp 1G (Full Working Rights)
+      Stamp 1G (Available Now)
     </div>
-    <div class="logo">rm</div>
-    <a href="./Resume.pdf" target="_blank" class="download-cv">
-      Download CV
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
+    <div class="logo">RM.</div>
+    <a href="./Resume.pdf" target="_blank" class="btn-download">Download CV</a>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-name">Ravi Maurya<span class="dot">.</span></h1>
-      <div class="hero-title-pill">Data Analyst & Scientist</div>
-      
-      <h2 class="hero-tagline">
-        Bridging Business Analytics<br>
-        <em>& Advanced Data Science</em>
-      </h2>
-      
-      <p class="hero-description">
-        Senior Data Professional (6.5+ Yrs) & MSc Graduate. I transform raw enterprise data 
-        into strategic intelligence using Qlik, Python, and next-gen Quantum ML.
-      </p>
-      
-      <div class="scroll-indicator">
-        <span>See my journey</span>
-        <div class="scroll-arrow"></div>
+    <h1>Bridging Analytics<br>& Quantum AI</h1>
+    <h2 class="hero-tagline">Data Scientist with <em>6.5+ Years</em> of Enterprise Impact</h2>
+    <p class="hero-bio">
+      I build scalable data pipelines and next-gen machine learning models. 
+      Currently exploring the intersection of Classical ML and Quantum Computing.
+    </p>
+  </section>
+
+  <section class="section-container">
+    <div class="section-header">
+      <span class="section-label">01. Professional Journey</span>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-role">
+        <h3>Senior Consultant</h3>
+        <span>Qlik (Data Integration)</span>
+        <div class="exp-date">2022 — 2024</div>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Led the migration of mission-critical analytics to <strong>Qlik Cloud (SaaS)</strong> for Fortune 500 clients like American Express.</li>
+          <li>Engineered automated Python/SQL ETL pipelines, reducing data latency by <strong>40%</strong>.</li>
+          <li>Designed "BUR" (Business Unit Reporting) systems to automate risk threshold tracking.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-role">
+        <h3>Senior Officer (BI)</h3>
+        <span>HDFC Limited</span>
+        <div class="exp-date">2020 — 2022</div>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Architected the "Single Source of Truth" SQL pipeline for credit risk assessment across Loans & Deposits.</li>
+          <li>Automated 100% of regulatory reporting submissions for Indian banking authorities.</li>
+          <li>Managed large-scale Qlik Sense server deployments and security protocols.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-role">
+        <h3>Software Engineer</h3>
+        <span>Melstar Technologies</span>
+        <div class="exp-date">2018 — 2020</div>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Developed analytical dashboards to track Non-Performing Assets (NPA) for banking clients.</li>
+          <li>Designed Star/Snowflake schemas to optimize financial audit trails.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="content-section" id="experience">
+  <section class="section-container">
     <div class="section-header">
-      <h2 class="section-title">01. Professional Journey</h2>
+      <span class="section-label">02. Selected Projects</span>
     </div>
 
-    <div class="card-item">
-        <div class="job-header">
-            <div>
-                <div class="job-company">Qlik (Data Integration)</div>
-                <div class="job-title">Senior Consultant</div>
-            </div>
-            <div class="job-date">2022 — 2024</div>
-        </div>
-        <ul class="job-list">
-            <li>Directed migration of mission-critical analytics to Qlik Cloud (SaaS) for global accounts like American Express & Herc Rentals.</li>
-            <li>Engineered automated Python/SQL pipelines, reducing data refresh latency by 40%.</li>
-            <li>Designed "BUR" (Business Unit Reporting) systems to track risk thresholds.</li>
-        </ul>
-    </div>
-
-    <div class="card-item">
-        <div class="job-header">
-            <div>
-                <div class="job-company">HDFC Limited</div>
-                <div class="job-title">Senior Officer (BI)</div>
-            </div>
-            <div class="job-date">2020 — 2022</div>
-        </div>
-        <ul class="job-list">
-            <li>Built the "Single Source of Truth" SQL pipeline for credit risk assessment across Loans & Deposits.</li>
-            <li>Automated 100% of regulatory reporting submissions for banking authorities.</li>
-            <li>Managed large-scale Qlik Sense server deployments.</li>
-        </ul>
-    </div>
-
-    <div class="card-item">
-        <div class="job-header">
-            <div>
-                <div class="job-company">Melstar Technologies</div>
-                <div class="job-title">Software Engineer</div>
-            </div>
-            <div class="job-date">2018 — 2020</div>
-        </div>
-        <ul class="job-list">
-            <li>Developed analytical dashboards to track Non-Performing Assets (NPA).</li>
-            <li>Modeled Star/Snowflake schemas for financial audit evidence.</li>
-        </ul>
-    </div>
-  </section>
-
-  <section class="content-section" id="projects">
-    <div class="section-header">
-      <h2 class="section-title">02. Selected Work</h2>
-    </div>
-
-    <div class="project-card">
+    <div class="project-grid">
+      <div class="project-card">
         <div class="project-visual">
-            <div class="bar-chart">
-                <div class="bar" style="animation-delay: 0s;"></div>
-                <div class="bar" style="animation-delay: 0.2s;"></div>
-                <div class="bar" style="animation-delay: 0.4s;"></div>
-                <div class="bar" style="animation-delay: 0.1s;"></div>
-            </div>
+          <div class="visual-chart">
+            <div class="bar" style="height: 40%; animation-delay: 0s;"></div>
+            <div class="bar" style="height: 80%; animation-delay: 0.2s;"></div>
+            <div class="bar" style="height: 60%; animation-delay: 0.4s;"></div>
+            <div class="bar" style="height: 90%; animation-delay: 0.1s;"></div>
+          </div>
         </div>
-        <div class="project-content">
-            <h3 class="project-title-text">HR Employee Attrition Dashboard</h3>
-            <p style="color:var(--text-secondary); margin-bottom:16px;">
-                End-to-end analytics solution to track workforce stability using Power BI & Tableau. 
-                Identified key turnover drivers to help HR teams retain top talent.
-            </p>
-            <div style="margin-bottom:24px;">
-                <span class="tag">Power BI</span>
-                <span class="tag">Tableau</span>
-                <span class="tag">Python</span>
-            </div>
-            <a href="https://github.com/ravimaurya704/hr-employee-attrition-dashboard" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:14px;">View Code →</a>
+        <div class="project-info">
+          <div class="project-meta">Tableau · Power BI · Python</div>
+          <h3 class="project-title">HR Attrition Dashboard</h3>
+          <p class="project-desc">
+            An end-to-end analytics suite tracking workforce stability. Identified key turnover drivers to help HR teams retain top talent using predictive insights.
+          </p>
+          <a href="https://github.com/ravimaurya704/hr-employee-attrition-dashboard" target="_blank" class="btn-link">View Code &rarr;</a>
         </div>
-    </div>
+      </div>
 
-    <div class="project-card">
+      <div class="project-card" style="border-color: var(--accent);">
         <div class="project-visual">
-            <div class="orbit-container">
-                <div class="ring ring-1"></div>
-                <div class="ring ring-2"></div>
-                <div class="core"></div>
-            </div>
+          <div class="visual-orbit">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="atom"></div>
+          </div>
         </div>
-        <div class="project-content">
-            <h3 class="project-title-text">Quantum AI for Cancer Detection</h3>
-            <p style="color:var(--text-secondary); margin-bottom:16px;">
-                Hybrid Quantum-Classical Neural Network (PennyLane) achieving 95.9% accuracy in medical imaging, 
-                outperforming traditional ResNet50 models.
-            </p>
-            <div style="margin-bottom:24px;">
-                <span class="tag">Quantum ML</span>
-                <span class="tag">PennyLane</span>
-                <span class="tag">Deep Learning</span>
-            </div>
-            <div style="display:flex; gap:20px;">
-                <a href="https://quantum-ai-cancer-detection.streamlit.app" target="_blank" style="color:#4ADE80; text-decoration:none; font-weight:600; font-size:14px;">● Live Demo</a>
-                <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:14px;">View Code →</a>
-            </div>
+        <div class="project-info">
+          <div class="project-meta" style="color: var(--highlight);">Quantum ML · Deep Learning</div>
+          <h3 class="project-title">Quantum Cancer Detection</h3>
+          <p class="project-desc">
+            Hybrid Quantum-Classical Neural Network (PennyLane) achieving <strong>95.9% accuracy</strong> in medical imaging, outperforming traditional ResNet50 models.
+          </p>
+          <div style="display: flex; gap: 20px;">
+             <a href="https://quantum-ai-cancer-detection.streamlit.app" target="_blank" class="btn-link" style="color: #4ADE80; border-color: #4ADE80;">● Live Demo</a>
+             <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" target="_blank" class="btn-link">Read Paper &rarr;</a>
+          </div>
         </div>
-    </div>
-
-    <div class="project-card">
-        <div class="project-content">
-            <h3 class="project-title-text">Remote Work & Mental Health</h3>
-            <p style="color:var(--text-secondary); margin-bottom:16px;">
-                Geospatial analysis of employee well-being trends using SQL and interactive Tableau maps.
-            </p>
-            <div style="margin-bottom:24px;">
-                <span class="tag">SQL</span>
-                <span class="tag">Geospatial Analysis</span>
-                <span class="tag">Tableau</span>
-            </div>
-            <a href="https://github.com/ravimaurya704/remote-work-mental-health-analysis-tableau-dashboard-" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:14px;">View Analysis →</a>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-visual">
+          <div style="font-family: 'Syne'; font-size: 60px; font-weight: 800; color: var(--text-muted); opacity: 0.2;">MAPS</div>
         </div>
+        <div class="project-info">
+          <div class="project-meta">SQL · Geospatial · Tableau</div>
+          <h3 class="project-title">Remote Work & Health</h3>
+          <p class="project-desc">
+            A geospatial analysis of global stress trends in remote work environments. Visualized correlation between location and mental well-being.
+          </p>
+          <a href="https://github.com/ravimaurya704/remote-work-mental-health-analysis-tableau-dashboard-" target="_blank" class="btn-link">View Analysis &rarr;</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="content-section" id="education">
+  <section class="section-container">
     <div class="section-header">
-      <h2 class="section-title">03. Academic Credentials</h2>
+      <span class="section-label">03. Education</span>
     </div>
-
-    <div class="card-item">
-        <div class="job-header">
-            <div>
-                <div class="job-title">MSc Data Analytics</div>
-                <div class="job-company">Dublin Business School</div>
-            </div>
-            <div class="job-date">Expected 2026</div>
-        </div>
-        <p style="color:var(--text-secondary); font-size:14px;">First Class Honours (1.1) Track. Specialization in Machine Learning & Data Storage.</p>
-    </div>
-
-    <div class="card-item">
-        <div class="job-header">
-            <div>
-                <div class="job-title">B.E. Electronics Engineering</div>
-                <div class="job-company">Mumbai University</div>
-            </div>
-            <div class="job-date">2017</div>
-        </div>
-        <p style="color:var(--text-secondary); font-size:14px;">Result: CGPI 7.90</p>
-    </div>
-
-    <div class="card-item">
-        <div class="job-header">
-            <div>
-                <div class="job-title">Diploma Engineering</div>
-                <div class="job-company">MSBTE</div>
-            </div>
-            <div class="job-date">2014</div>
-        </div>
-        <p style="color:var(--text-secondary); font-size:14px;">Result: Distinction (87.54%)</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">Expected 2026</div>
+        <h4 class="edu-degree">MSc Data Analytics</h4>
+        <div class="edu-school">Dublin Business School</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2017</div>
+        <h4 class="edu-degree">B.E. Electronics</h4>
+        <div class="edu-school">Mumbai University (CGPI 7.9)</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2014</div>
+        <h4 class="edu-degree">Diploma Engineering</h4>
+        <div class="edu-school">MSBTE (Distinction)</div>
+      </div>
     </div>
   </section>
 
-  <section class="content-section" id="about">
-    <div class="section-header">
-      <h2 class="section-title">The Backstory</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px;">
+  <section class="section-container">
+    <div class="story-layout">
+      <img src="./profile.jpg" alt="Ravi Maurya" class="story-img">
+      
+      <div>
+        <div class="section-label" style="margin-bottom: 24px;">The Backstory</div>
+        <p style="margin-bottom: 24px; font-size: 18px; color: var(--text-secondary);">
+          Previously, I was a <strong>Business Intelligence Developer</strong>, spending 6+ years at major firms like HDFC and Qlik building the pipelines that power corporate decisions.
+        </p>
+        <p style="margin-bottom: 24px; font-size: 18px; color: var(--text-secondary);">
+          However, coming to Ireland for my <strong>MSc in Data Analytics</strong> changed everything. I moved beyond just reporting on the past to predicting the future—mastering <span style="color: var(--text-primary);">Machine Learning, Deep Learning, and Forecasting</span>.
+        </p>
+        <p style="margin-bottom: 40px; font-size: 18px; color: var(--text-secondary);">
+          In my research, I took this further by exploring <strong>Quantum Machine Learning</strong>—combining robust enterprise data architecture with cutting-edge physics to build systems that are not just faster, but smarter.
+        </p>
+        
         <div>
-             <img src="./profile.jpg" alt="Ravi" style="width: 100%; border-radius: 20px; border: 1px solid var(--border); opacity: 0.9;">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">SQL</span>
+          <span class="tech-pill">Qlik Sense</span>
+          <span class="tech-pill">Power BI</span>
+          <span class="tech-pill">Quantum ML</span>
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">TensorFlow</span>
         </div>
-        <div>
-            <p style="color:var(--text-secondary); font-size:18px; line-height:1.8; margin-bottom:24px;">
-                Previously, I was a <strong>Business Intelligence Developer</strong>, spending 6+ years at major firms like HDFC and Qlik building the pipelines that power corporate decisions.
-            </p>
-            <p style="color:var(--text-secondary); font-size:18px; line-height:1.8; margin-bottom:24px;">
-                However, coming to Ireland for my <strong>MSc in Data Analytics</strong> changed everything. I moved beyond just reporting on the past to predicting the future—mastering <span style="color:var(--accent);">Machine Learning, Deep Learning, and Forecasting</span>.
-            </p>
-            <p style="color:var(--text-secondary); font-size:18px; line-height:1.8;">
-                In my research, I took this further by exploring <strong>Quantum Machine Learning</strong>—combining robust enterprise data architecture with cutting-edge physics to build systems that are not just faster, but smarter.
-            </p>
-        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div style="display: flex; justify-content: center; gap: 32px; margin-bottom: 32px;">
-       <a href="https://linkedin.com/in/ravimaurya704" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">LinkedIn</a>
-       <a href="https://github.com/ravimaurya704" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">GitHub</a>
-       <a href="mailto:ravimaurya.ie@gmail.com" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">Email</a>
+    <div class="socials">
+      <a href="https://linkedin.com/in/ravimaurya704" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ravimaurya704" target="_blank">GitHub</a>
+      <a href="mailto:ravimaurya.ie@gmail.com">Email</a>
     </div>
-    <p style="color:var(--text-muted); font-size:12px;">Built by Ravi Maurya · 2026</p>
+    <p>&copy; 2026 Ravi Maurya. Crafted with &hearts; in Dublin.</p>
   </footer>
 
   <script>
-    // Cursor glow effect
-    const cursorGlow = document.getElementById('cursorGlow');
-    if (cursorGlow) {
-      document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-      });
-    }
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
 
-    // Intersection Observer
+    // Scroll Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -703,10 +444,10 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.hero-name, .hero-tagline, .hero-description, .card-item, .project-card, .about-content').forEach(el => {
+    document.querySelectorAll('.exp-card, .project-card, .edu-card, .story-layout').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      el.style.transition = 'all 0.6s ease-out';
       observer.observe(el);
     });
   </script>
