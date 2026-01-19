@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ravi Maurya — Data Scientist & Quantum Researcher</title>
-  <meta name="description" content="Senior Data Engineer & Quantum Researcher. Bridging Enterprise Data with Advanced AI. Based in Dublin (Stamp 1G).">
+  <title>Ravi Maurya — Data Scientist & Analytics Specialist</title>
+  <meta name="description" content="Senior Data Scientist & Analytics Specialist based in Dublin. Bridging Enterprise Intelligence with Quantum Innovation. Stamp 1G Holder.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   
   <style>
     :root {
-      /* --- THE "QUANTUM NEBULA" PALETTE --- 
-         Combines deep space darks with vibrant violet (Quantum) and cyan (Data) 
-      */
-      --bg-primary: #050505;       /* Almost Black */
-      --bg-secondary: #0A0A0A;     /* Deep Grey */
-      --bg-card: #111111;          /* Card BG */
+      /* --- PROFESSIONAL "ENTERPRISE DATA" PALETTE --- */
+      --bg-primary: #0B1120;       /* Deep Navy/Slate - Professional Base */
+      --bg-secondary: #162032;     /* Lighter Navy for cards */
+      --bg-highlight: #1E293B;     /* Highlight for interactions */
       
-      --text-primary: #F8FAFC;     /* Bright White */
-      --text-secondary: #94A3B8;   /* Muted Slate */
-      --text-muted: #64748B;       /* Darker Slate */
+      --text-primary: #F1F5F9;     /* Off-white for readability */
+      --text-secondary: #94A3B8;   /* Professional Grey */
+      --text-muted: #64748B;       /* Subtle Text */
       
-      /* Primary Accent: Electric Violet (Quantum) */
-      --accent: #8B5CF6;           
-      /* Secondary Accent: Neon Cyan (Data/Cloud) */
-      --highlight: #06B6D4;        
-      
-      --accent-glow: rgba(139, 92, 246, 0.15);
-      --border: #222222;
+      /* Primary Accent: Precision Teal (Trust & Data) */
+      --accent: #2DD4BF;           
+      /* Secondary Accent: Quantum Indigo (Innovation) */
+      --quantum: #818CF8;        
+      /* Gold for Achievements */
+      --gold: #FCD34D;
+
+      --border: #334155;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,142 +43,159 @@
       overflow-x: hidden;
     }
 
-    /* 1. CINEMATIC NOISE TEXTURE */
+    /* Professional Grain Texture (Subtle) */
     body::before {
       content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
       opacity: 0.03; pointer-events: none; z-index: 999;
     }
 
-    /* 2. MOUSE GLOW FOLLOWER */
+    /* MOUSE GLOW */
     .cursor-glow {
-      position: fixed; width: 600px; height: 600px;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+      position: fixed; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, transparent 60%);
       transform: translate(-50%, -50%); pointer-events: none; z-index: -1;
-      opacity: 0.6; transition: opacity 0.3s ease;
+      opacity: 0.5; transition: opacity 0.3s ease;
     }
 
-    /* 3. NAVIGATION */
+    /* NAVIGATION */
     header {
       position: fixed; top: 0; left: 0; right: 0;
-      padding: 24px 48px; display: flex; justify-content: space-between; align-items: center;
-      z-index: 100; backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(5,5,5,0.8) 0%, transparent 100%);
-      animation: fadeInDown 1s ease-out 0.5s forwards; opacity: 0;
+      padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
+      z-index: 100; backdrop-filter: blur(12px);
+      background: rgba(11, 17, 32, 0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      animation: fadeInDown 0.8s ease-out forwards;
     }
 
     .status-badge {
-      display: flex; align-items: center; gap: 8px;
+      display: flex; align-items: center; gap: 10px;
       font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
-      color: #4ADE80; background: rgba(74, 222, 128, 0.08);
-      padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(74, 222, 128, 0.2);
+      color: #34D399; background: rgba(52, 211, 153, 0.1);
+      padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(52, 211, 153, 0.2);
     }
     .status-dot {
-      width: 6px; height: 6px; background: #4ADE80; border-radius: 50%;
-      box-shadow: 0 0 10px #4ADE80; animation: pulse 2s infinite;
+      width: 8px; height: 8px; background: #34D399; border-radius: 50%;
+      box-shadow: 0 0 10px #34D399; animation: pulse 2s infinite;
     }
 
     .logo {
-      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px;
-      background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--text-primary);
     }
 
     .btn-download {
-      font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none;
-      padding: 10px 24px; border: 1px solid var(--border); border-radius: 100px;
-      background: rgba(255,255,255,0.03); transition: all 0.3s ease;
+      font-size: 13px; font-weight: 600; color: var(--bg-primary); text-decoration: none;
+      padding: 10px 24px; border-radius: 100px;
+      background: var(--accent); transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
     }
-    .btn-download:hover { background: var(--text-primary); color: var(--bg-primary); border-color: var(--text-primary); }
+    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(45, 212, 191, 0.4); }
 
-    /* 4. HERO SECTION */
+    /* HERO SECTION */
     .hero {
       min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
       padding: 120px 24px; text-align: center; position: relative;
     }
 
+    .hero-pill {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid rgba(45, 212, 191, 0.3);
+      padding: 8px 20px; border-radius: 100px; margin-bottom: 32px;
+      background: rgba(45, 212, 191, 0.05);
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.1s forwards;
+    }
+
     .hero h1 {
-      font-family: 'Syne', sans-serif; font-size: clamp(40px, 8vw, 80px); font-weight: 800;
-      letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1;
-      background: linear-gradient(to bottom right, #fff 40%, #94A3B8 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 72px); font-weight: 800;
+      letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1.1;
+      color: var(--text-primary);
       opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;
     }
 
     .hero-tagline {
-      font-family: 'Syne', sans-serif; font-size: clamp(20px, 4vw, 32px); font-weight: 600;
+      font-family: 'Syne', sans-serif; font-size: clamp(20px, 4vw, 32px); font-weight: 500;
       color: var(--text-secondary); margin-bottom: 32px;
-      opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards;
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.3s forwards;
     }
-    .hero-tagline em { font-style: normal; color: var(--accent); position: relative; }
+    /* "Quantum" as an added advantage - styled subtly but distinct */
+    .hero-tagline em { 
+        font-style: normal; color: var(--quantum); font-weight: 600; 
+        position: relative; display: inline-block;
+    }
     .hero-tagline em::after {
-      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        content: "✦"; font-size: 12px; position: absolute; top: -5px; right: -12px; color: var(--quantum);
     }
 
     .hero-bio {
-      font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 48px;
-      opacity: 0; animation: fadeInUp 0.8s ease-out 0.6s forwards;
+      font-size: 18px; color: var(--text-secondary); max-width: 650px; margin: 0 auto 48px;
+      opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards;
     }
 
-    /* 5. CONTENT SECTIONS */
+    /* CONTENT STRUCTURE */
     .section-container { max-width: 1200px; margin: 0 auto; padding: 100px 24px; }
     
     .section-header {
       display: flex; justify-content: space-between; align-items: baseline;
-      margin-bottom: 60px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+      margin-bottom: 50px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
     }
     .section-label {
       font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
     }
 
-    /* 6. EXPERIENCE CARDS (Minimalist & Clean) */
+    /* PROFESSIONAL JOURNEY - LOGO INTEGRATION */
     .exp-card {
-      display: grid; grid-template-columns: 1fr 3fr; gap: 24px;
-      padding: 32px; border-radius: 20px; border: 1px solid var(--border);
-      background: linear-gradient(180deg, var(--bg-card) 0%, rgba(17,17,17,0.5) 100%);
-      margin-bottom: 24px; transition: transform 0.3s ease, border-color 0.3s ease;
+      display: grid; grid-template-columns: 60px 1fr 120px; gap: 24px;
+      padding: 32px; border-radius: 16px; border: 1px solid var(--border);
+      background: var(--bg-secondary); margin-bottom: 20px;
+      transition: all 0.3s ease;
     }
-    .exp-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-    
-    .exp-role h3 { font-family: 'Syne', sans-serif; font-size: 20px; color: var(--text-primary); margin-bottom: 4px; }
-    .exp-role span { font-size: 14px; color: var(--highlight); font-weight: 600; }
-    .exp-date { font-family: monospace; color: var(--text-muted); font-size: 12px; margin-top: 8px; }
-    .exp-details ul { list-style: none; }
+    .exp-card:hover { border-color: var(--accent); transform: translateX(5px); }
+
+    .company-logo {
+      width: 50px; height: 50px; border-radius: 8px; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: 800; color: var(--bg-primary);
+      overflow: hidden; /* Ensures pasted images fit */
+    }
+    .company-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+    .exp-content h3 { font-family: 'Syne', sans-serif; font-size: 20px; color: var(--text-primary); margin-bottom: 4px; }
+    .exp-content h4 { font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .exp-details { list-style: none; }
     .exp-details li {
-      position: relative; padding-left: 24px; margin-bottom: 12px; color: var(--text-secondary); font-size: 15px;
+      position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-secondary); font-size: 15px;
     }
     .exp-details li::before {
-      content: '▹'; position: absolute; left: 0; color: var(--accent);
+      content: '•'; position: absolute; left: 0; color: var(--border);
     }
+    .exp-date { font-family: monospace; color: var(--text-muted); font-size: 12px; text-align: right; }
 
-    /* 7. PROJECT CARDS (Visual Heavy) */
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 32px; }
+    /* PROJECT GRID */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 32px; }
     
     .project-card {
-      border: 1px solid var(--border); border-radius: 24px; overflow: hidden;
-      background: var(--bg-card); transition: all 0.4s ease;
+      border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
+      background: var(--bg-secondary); transition: all 0.4s ease;
     }
-    .project-card:hover { transform: translateY(-8px); border-color: var(--highlight); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 
     .project-visual {
-      height: 280px; background: #080808; position: relative; overflow: hidden;
+      height: 260px; background: #0F172A; position: relative; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--border);
     }
     
-    /* Custom CSS Visuals (Preserved from prev turn, updated colors) */
-    .visual-orbit { width: 200px; height: 200px; position: relative; display: flex; justify-content: center; align-items: center; }
-    .atom { width: 16px; height: 16px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 20px var(--accent); z-index: 10; }
-    .ring { position: absolute; border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 50%; }
-    .r1 { width: 100%; height: 60%; animation: spin 4s linear infinite; }
-    .r2 { width: 60%; height: 100%; animation: spin 6s linear infinite reverse; }
-    
-    .visual-chart { display: flex; align-items: flex-end; gap: 12px; height: 120px; }
-    .bar { width: 24px; background: linear-gradient(to top, var(--highlight), transparent); border-radius: 4px; animation: bounce 2s infinite ease-in-out; }
-    
+    /* Project Info */
     .project-info { padding: 32px; }
-    .project-meta { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .project-tags { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tag { 
+        font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+        padding: 4px 10px; border-radius: 50px; background: rgba(255,255,255,0.05); color: var(--text-secondary);
+    }
+    .tag.highlight { color: var(--bg-primary); background: var(--accent); }
+    .tag.quantum { color: #fff; background: var(--quantum); }
+
     .project-title { font-family: 'Syne', sans-serif; font-size: 24px; margin-bottom: 12px; color: var(--text-primary); }
     .project-desc { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
     
@@ -187,47 +204,61 @@
       color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px;
       transition: all 0.3s;
     }
-    .btn-link:hover { color: var(--highlight); border-color: var(--highlight); }
+    .btn-link:hover { color: var(--accent); border-color: var(--accent); }
 
-    /* 8. EDUCATION & BACKSTORY */
-    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .edu-card {
-      padding: 24px; border: 1px solid var(--border); border-radius: 16px;
-      background: rgba(255,255,255,0.02);
+    /* FUTURE PROJECT CARD (Dashed) */
+    .future-card {
+        border: 2px dashed var(--border); background: transparent; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; text-align: center; min-height: 300px;
+        transition: all 0.3s; opacity: 0.6;
     }
-    .edu-year { color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 8px; }
-    .edu-degree { font-family: 'Syne', sans-serif; font-size: 16px; margin-bottom: 4px; color: var(--text-primary); }
-    .edu-school { font-size: 13px; color: var(--text-muted); }
+    .future-card:hover { opacity: 1; border-color: var(--text-muted); }
 
-    .story-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; }
+    /* EDUCATION CARDS */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .edu-card {
+      padding: 32px; border: 1px solid var(--border); border-radius: 16px;
+      background: var(--bg-secondary); position: relative;
+    }
+    /* Master's Highlight */
+    .edu-card.highlight {
+        border-color: rgba(252, 211, 77, 0.3);
+        background: radial-gradient(circle at top right, rgba(252, 211, 77, 0.05), var(--bg-secondary));
+    }
+    .achievement-badge {
+        position: absolute; top: 20px; right: 20px; 
+        font-size: 20px; color: var(--gold);
+    }
+    
+    .edu-degree { font-family: 'Syne', sans-serif; font-size: 18px; color: var(--text-primary); margin-bottom: 4px; }
+    .edu-school { font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .edu-meta { font-size: 13px; color: var(--text-secondary); display: flex; justify-content: space-between; }
+
+    /* BACKSTORY & FOOTER */
+    .story-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
     .story-img {
       width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px;
-      filter: grayscale(100%) contrast(1.1); transition: filter 0.5s;
+      border: 1px solid var(--border);
     }
-    .story-img:hover { filter: grayscale(0%); }
     
-    .tech-pill {
-      display: inline-block; padding: 6px 14px; border: 1px solid var(--border);
-      border-radius: 100px; font-size: 12px; color: var(--text-secondary); margin: 0 6px 6px 0;
-    }
-
-    /* FOOTER */
     footer { padding: 80px 24px; text-align: center; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
     .socials { display: flex; justify-content: center; gap: 32px; margin-bottom: 32px; }
-    .socials a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.3s; }
-    .socials a:hover { color: var(--text-primary); }
+    .socials a { color: var(--text-secondary); text-decoration: none; font-size: 16px; transition: color 0.3s; }
+    .socials a:hover { color: var(--accent); }
 
     /* ANIMATIONS */
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
     @keyframes spin { 100% { transform: rotate(360deg); } }
-    @keyframes bounce { 0%, 100% { transform: scaleY(0.5); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
 
     @media (max-width: 768px) {
-      .exp-card, .story-layout, .edu-grid { grid-template-columns: 1fr; }
+      .exp-card { grid-template-columns: 1fr; gap: 12px; }
+      .company-logo { margin-bottom: 8px; }
+      .exp-date { text-align: left; margin-bottom: 12px; }
+      .project-grid, .edu-grid, .story-layout { grid-template-columns: 1fr; }
       header { padding: 20px; }
-      .hero h1 { font-size: 48px; }
+      .hero h1 { font-size: 42px; }
     }
   </style>
 </head>
@@ -238,18 +269,19 @@
   <header>
     <div class="status-badge">
       <span class="status-dot"></span>
-      Stamp 1G (Available Now)
+      Stamp 1G (Available)
     </div>
     <div class="logo">RM.</div>
     <a href="./Resume.pdf" target="_blank" class="btn-download">Download CV</a>
   </header>
 
   <section class="hero">
-    <h1>Bridging Analytics<br>& Quantum AI</h1>
-    <h2 class="hero-tagline">Data Scientist with <em>6.5+ Years</em> of Enterprise Impact</h2>
+    <div class="hero-pill">Data Scientist & Analytics Specialist</div>
+    
+    <h1>Optimizing Enterprise Intelligence<br><em>Augmented by Quantum Computing</em></h1>
+    
     <p class="hero-bio">
-      I build scalable data pipelines and next-gen machine learning models. 
-      Currently exploring the intersection of Classical ML and Quantum Computing.
+      Senior Data Professional with <strong>6.5+ Years</strong> of experience. I bridge the gap between traditional Business Intelligence and advanced AI, using Quantum Research as a competitive edge for complex problem solving.
     </p>
   </section>
 
@@ -259,47 +291,50 @@
     </div>
 
     <div class="exp-card">
-      <div class="exp-role">
-        <h3>Senior Consultant</h3>
-        <span>Qlik (Data Integration)</span>
-        <div class="exp-date">2022 — 2024</div>
+      <div class="company-logo">
+        <i class="fa-solid fa-chart-line" style="color:#00B07B;"></i>
       </div>
-      <div class="exp-details">
-        <ul>
-          <li>Led the migration of mission-critical analytics to <strong>Qlik Cloud (SaaS)</strong> for Fortune 500 clients like American Express.</li>
+      <div class="exp-content">
+        <h3>Senior Consultant</h3>
+        <h4>Qlik (Data Integration)</h4>
+        <ul class="exp-details">
+          <li>Directed migration of mission-critical analytics to <strong>Qlik Cloud (SaaS)</strong> for Fortune 500 clients like American Express.</li>
           <li>Engineered automated Python/SQL ETL pipelines, reducing data latency by <strong>40%</strong>.</li>
           <li>Designed "BUR" (Business Unit Reporting) systems to automate risk threshold tracking.</li>
         </ul>
       </div>
+      <div class="exp-date">2022 — 2024</div>
     </div>
 
     <div class="exp-card">
-      <div class="exp-role">
-        <h3>Senior Officer (BI)</h3>
-        <span>HDFC Limited</span>
-        <div class="exp-date">2020 — 2022</div>
+      <div class="company-logo">
+         <i class="fa-solid fa-building-columns" style="color:#1D4E9E;"></i>
       </div>
-      <div class="exp-details">
-        <ul>
+      <div class="exp-content">
+        <h3>Senior Officer (BI)</h3>
+        <h4>HDFC Limited</h4>
+        <ul class="exp-details">
           <li>Architected the "Single Source of Truth" SQL pipeline for credit risk assessment across Loans & Deposits.</li>
           <li>Automated 100% of regulatory reporting submissions for Indian banking authorities.</li>
-          <li>Managed large-scale Qlik Sense server deployments and security protocols.</li>
+          <li>Managed large-scale Qlik Sense server deployments.</li>
         </ul>
       </div>
+      <div class="exp-date">2020 — 2022</div>
     </div>
 
     <div class="exp-card">
-      <div class="exp-role">
-        <h3>Software Engineer</h3>
-        <span>Melstar Technologies</span>
-        <div class="exp-date">2018 — 2020</div>
+      <div class="company-logo">
+         <i class="fa-solid fa-code" style="color:#E07A5F;"></i>
       </div>
-      <div class="exp-details">
-        <ul>
+      <div class="exp-content">
+        <h3>Software Engineer</h3>
+        <h4>Melstar Technologies</h4>
+        <ul class="exp-details">
           <li>Developed analytical dashboards to track Non-Performing Assets (NPA) for banking clients.</li>
           <li>Designed Star/Snowflake schemas to optimize financial audit trails.</li>
         </ul>
       </div>
+      <div class="exp-date">2018 — 2020</div>
     </div>
   </section>
 
@@ -309,38 +344,23 @@
     </div>
 
     <div class="project-grid">
-      <div class="project-card">
+      
+      <div class="project-card" style="border-color: var(--quantum);">
         <div class="project-visual">
-          <div class="visual-chart">
-            <div class="bar" style="height: 40%; animation-delay: 0s;"></div>
-            <div class="bar" style="height: 80%; animation-delay: 0.2s;"></div>
-            <div class="bar" style="height: 60%; animation-delay: 0.4s;"></div>
-            <div class="bar" style="height: 90%; animation-delay: 0.1s;"></div>
-          </div>
+           <div style="position:relative; width:100px; height:100px; display:flex; justify-content:center; align-items:center;">
+              <div style="position:absolute; width:100%; height:100%; border:1px solid var(--quantum); border-radius:50%; animation:spin 4s linear infinite;"></div>
+              <div style="position:absolute; width:60%; height:100%; border:1px solid var(--quantum); border-radius:50%; animation:spin 6s linear infinite reverse;"></div>
+              <div style="width:12px; height:12px; background:#fff; border-radius:50%; box-shadow:0 0 15px #fff;"></div>
+           </div>
         </div>
         <div class="project-info">
-          <div class="project-meta">Tableau · Power BI · Python</div>
-          <h3 class="project-title">HR Attrition Dashboard</h3>
-          <p class="project-desc">
-            An end-to-end analytics suite tracking workforce stability. Identified key turnover drivers to help HR teams retain top talent using predictive insights.
-          </p>
-          <a href="https://github.com/ravimaurya704/hr-employee-attrition-dashboard" target="_blank" class="btn-link">View Code &rarr;</a>
-        </div>
-      </div>
-
-      <div class="project-card" style="border-color: var(--accent);">
-        <div class="project-visual">
-          <div class="visual-orbit">
-            <div class="ring r1"></div>
-            <div class="ring r2"></div>
-            <div class="atom"></div>
+          <div class="project-tags">
+             <span class="tag quantum">Main Research</span>
+             <span class="tag">PennyLane</span>
           </div>
-        </div>
-        <div class="project-info">
-          <div class="project-meta" style="color: var(--highlight);">Quantum ML · Deep Learning</div>
           <h3 class="project-title">Quantum Cancer Detection</h3>
           <p class="project-desc">
-            Hybrid Quantum-Classical Neural Network (PennyLane) achieving <strong>95.9% accuracy</strong> in medical imaging, outperforming traditional ResNet50 models.
+            <strong>Featured Research:</strong> Designed a Hybrid Quantum-Classical Neural Network using PennyLane & PyTorch. Achieved 95.9% accuracy in binary classification of medical images, outperforming classical ResNet50 models.
           </p>
           <div style="display: flex; gap: 20px;">
              <a href="https://quantum-ai-cancer-detection.streamlit.app" target="_blank" class="btn-link" style="color: #4ADE80; border-color: #4ADE80;">● Live Demo</a>
@@ -348,20 +368,49 @@
           </div>
         </div>
       </div>
-      
+
       <div class="project-card">
         <div class="project-visual">
-          <div style="font-family: 'Syne'; font-size: 60px; font-weight: 800; color: var(--text-muted); opacity: 0.2;">MAPS</div>
+           <i class="fa-solid fa-chart-simple" style="font-size: 60px; color: var(--accent);"></i>
         </div>
         <div class="project-info">
-          <div class="project-meta">SQL · Geospatial · Tableau</div>
+          <div class="project-tags">
+             <span class="tag highlight">Analytics</span>
+             <span class="tag">Power BI</span>
+          </div>
+          <h3 class="project-title">HR Attrition Dashboard</h3>
+          <p class="project-desc">
+            End-to-end business intelligence solution. Used Python for data cleaning and Power BI/Tableau for visualization to identify key drivers of employee turnover and predict retention risks.
+          </p>
+          <a href="https://github.com/ravimaurya704/hr-employee-attrition-dashboard" target="_blank" class="btn-link">View Code &rarr;</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-visual">
+           <i class="fa-solid fa-map-location-dot" style="font-size: 60px; color: var(--text-muted);"></i>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+             <span class="tag">SQL</span>
+             <span class="tag">Geospatial</span>
+          </div>
           <h3 class="project-title">Remote Work & Health</h3>
           <p class="project-desc">
-            A geospatial analysis of global stress trends in remote work environments. Visualized correlation between location and mental well-being.
+            A geospatial analysis of global stress trends. Mapped correlation between remote work locations and mental well-being indicators using SQL and Tableau.
           </p>
           <a href="https://github.com/ravimaurya704/remote-work-mental-health-analysis-tableau-dashboard-" target="_blank" class="btn-link">View Analysis &rarr;</a>
         </div>
       </div>
+
+      <div class="project-card future-card">
+         <i class="fa-solid fa-flask" style="font-size: 32px; color: var(--text-muted); margin-bottom: 16px;"></i>
+         <h3 style="font-family: 'Syne'; font-size: 18px; color: var(--text-secondary);">Future Research</h3>
+         <p style="font-size: 13px; color: var(--text-muted); max-width: 200px;">
+           Currently exploring Time-Series Forecasting using Quantum Variational Circuits.
+         </p>
+      </div>
+
     </div>
   </section>
 
@@ -370,21 +419,40 @@
       <span class="section-label">03. Education</span>
     </div>
     <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-year">Expected 2026</div>
+      
+      <div class="edu-card highlight">
+        <i class="fa-solid fa-award achievement-badge"></i>
         <h4 class="edu-degree">MSc Data Analytics</h4>
         <div class="edu-school">Dublin Business School</div>
+        <div style="margin: 16px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
+           <span class="tag highlight">First Class Honours (1.1)</span>
+        </div>
+        <div class="edu-meta">
+           <span>2026</span>
+           <span>Dublin, Ireland</span>
+        </div>
       </div>
-      <div class="edu-card">
-        <div class="edu-year">2017</div>
-        <h4 class="edu-degree">B.E. Electronics</h4>
-        <div class="edu-school">Mumbai University (CGPI 7.9)</div>
+
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <div class="edu-card">
+            <h4 class="edu-degree">B.E. Electronics Engineering</h4>
+            <div class="edu-school">Mumbai University</div>
+            <div class="edu-meta">
+               <span>2017</span>
+               <span>CGPI: 8.00</span>
+            </div>
+        </div>
+
+        <div class="edu-card">
+            <h4 class="edu-degree">Diploma Engineering</h4>
+            <div class="edu-school">Maharashtra State Board of Technical Education</div>
+            <div class="edu-meta">
+               <span>2014</span>
+               <span>Distinction (87.54%)</span>
+            </div>
+        </div>
       </div>
-      <div class="edu-card">
-        <div class="edu-year">2014</div>
-        <h4 class="edu-degree">Diploma Engineering</h4>
-        <div class="edu-school">MSBTE (Distinction)</div>
-      </div>
+
     </div>
   </section>
 
@@ -398,20 +466,19 @@
           Previously, I was a <strong>Business Intelligence Developer</strong>, spending 6+ years at major firms like HDFC and Qlik building the pipelines that power corporate decisions.
         </p>
         <p style="margin-bottom: 24px; font-size: 18px; color: var(--text-secondary);">
-          However, coming to Ireland for my <strong>MSc in Data Analytics</strong> changed everything. I moved beyond just reporting on the past to predicting the future—mastering <span style="color: var(--text-primary);">Machine Learning, Deep Learning, and Forecasting</span>.
+          However, coming to Ireland for my <strong>MSc in Data Analytics</strong> changed everything. I moved beyond just reporting on the past to predicting the future—mastering <span style="color: var(--text-primary); border-bottom: 1px solid var(--accent);">Machine Learning, Deep Learning, and Forecasting</span>.
         </p>
         <p style="margin-bottom: 40px; font-size: 18px; color: var(--text-secondary);">
           In my research, I took this further by exploring <strong>Quantum Machine Learning</strong>—combining robust enterprise data architecture with cutting-edge physics to build systems that are not just faster, but smarter.
         </p>
         
-        <div>
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">SQL</span>
-          <span class="tech-pill">Qlik Sense</span>
-          <span class="tech-pill">Power BI</span>
-          <span class="tech-pill">Quantum ML</span>
-          <span class="tech-pill">AWS</span>
-          <span class="tech-pill">TensorFlow</span>
+        <div style="display: flex; flex-wrap: gap; gap: 8px;">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Qlik Sense</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Quantum ML</span>
+          <span class="tag">AWS</span>
         </div>
       </div>
     </div>
@@ -419,15 +486,15 @@
 
   <footer>
     <div class="socials">
-      <a href="https://linkedin.com/in/ravimaurya704" target="_blank">LinkedIn</a>
-      <a href="https://github.com/ravimaurya704" target="_blank">GitHub</a>
-      <a href="mailto:ravimaurya.ie@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/ravimaurya704" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/ravimaurya704" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="mailto:ravimaurya.ie@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
     </div>
-    <p>&copy; 2026 Ravi Maurya. Crafted with &hearts; in Dublin.</p>
+    <p>&copy; 2026 Ravi Maurya. Crafted in Dublin.</p>
   </footer>
 
   <script>
-    // Custom Cursor Logic
+    // Cursor Logic
     const cursor = document.getElementById('cursor');
     document.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
