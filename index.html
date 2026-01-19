@@ -105,23 +105,25 @@
       opacity: 0; animation: fadeInUp 0.8s ease-out 0.1s forwards;
     }
 
-    /* REDUCED FONT SIZE HERE */
+    /* REDUCED FONT SIZE HERE - CLEANER LOOK */
     .hero h1 {
-      font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 60px); font-weight: 800;
-      letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2;
-      color: var(--text-primary); max-width: 900px;
+      font-family: 'Syne', sans-serif; 
+      font-size: clamp(28px, 4vw, 48px); /* Significantly reduced from 60px */
+      font-weight: 800;
+      letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.3;
+      color: var(--text-primary); max-width: 800px;
       opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;
     }
 
     .hero-tagline {
-      font-family: 'Syne', sans-serif; font-size: clamp(18px, 3vw, 28px); font-weight: 500;
+      font-family: 'Syne', sans-serif; font-size: clamp(18px, 2.5vw, 24px); font-weight: 500;
       color: var(--text-secondary); margin-bottom: 32px; max-width: 800px;
       opacity: 0; animation: fadeInUp 0.8s ease-out 0.3s forwards;
     }
     .hero-tagline em { font-style: normal; color: var(--quantum); font-weight: 600; }
 
     .hero-bio {
-      font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 48px;
+      font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 48px;
       opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards;
     }
 
@@ -305,7 +307,7 @@
     <h1>Transforming Enterprise Data<br>Into Actionable Intelligence</h1>
     
     <h2 class="hero-tagline">
-      Explored <em>Quantum Machine Learning</em> in my final year research as a step beyond conventional AI
+      Moving beyond conventional AI with specialized research in <em>Quantum Machine Learning</em>
     </h2>
     
     <p class="hero-bio">
@@ -321,18 +323,19 @@
       <div class="skill-card">
         <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
         <div class="skill-title">ML & Deep Learning</div>
-        <div class="skill-desc">Predictive modeling using Python & Scikit-Learn. Advanced neural networks (CNN, RNN) with TensorFlow/Keras.</div>
+        <div class="skill-desc">Predictive modeling using Python. Advanced neural networks (CNN, RNN) with TensorFlow/Keras.</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
         <div class="skill-title">Professional BI</div>
-        <div class="skill-desc">6.5+ years of enterprise experience in <strong>Qlik Sense</strong>, Qlik Cloud, and NPrinting architecture.</div>
+        <div class="skill-desc">6.5+ years of enterprise expertise in <strong>Qlik Sense</strong>, Qlik Cloud, and NPrinting architecture.</div>
+        <span class="skill-highlight">Professional Experience</span>
       </div>
       <div class="skill-card">
         <div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div>
         <div class="skill-title">Modern Analytics</div>
-        <div class="skill-desc">Academic specialization in <strong>Power BI</strong> and <strong>Tableau</strong> for interactive visual storytelling.</div>
-        <span class="skill-highlight">MSc Learned</span>
+        <div class="skill-desc">Specialized in <strong>Power BI</strong> and <strong>Tableau</strong> for interactive storytelling and visual analytics.</div>
+        <span class="skill-highlight">MSc Specialization</span>
       </div>
       <div class="skill-card">
         <div class="skill-icon"><i class="fa-solid fa-atom"></i></div>
@@ -398,6 +401,25 @@
         <ul class="exp-list">
           <li>Architected the central SQL pipeline for credit risk assessment across Loans & Deposits.</li>
           <li>Streamlined regulatory reporting, automating 100% of submissions to banking authorities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="company-logo">
+         <img src="https://placehold.co/100x100/1e293b/38bdf8?text=ML" alt="Melstar">
+      </div>
+      <div>
+        <div class="exp-header">
+           <div>
+             <div class="exp-role">Software Engineer</div>
+             <div class="exp-company">Melstar Technologies</div>
+           </div>
+           <div class="exp-date">2018 — 2020</div>
+        </div>
+        <ul class="exp-list">
+          <li>Developed analytical dashboards to track Non-Performing Assets (NPA) in the banking sector.</li>
+          <li>Designed Star/Snowflake schemas to enhance financial audit trails.</li>
         </ul>
       </div>
     </div>
@@ -486,17 +508,17 @@
            <strong>Track:</strong> First Class Honours (1.1)
         </div>
         <div class="edu-meta">
-           <span>Expected 2026</span>
+           <span>2026</span>
            <span>Dublin, Ireland</span>
         </div>
       </div>
 
       <div class="edu-card">
-        <h4 class="edu-degree">B.E. Electronics Engineering</h4>
+        <h4 class="edu-degree">B.E. Electronics & Telecommunication Engineering</h4>
         <div class="edu-school">Mumbai University</div>
         <div class="edu-meta">
            <span>2017</span>
-           <span>CGPI: 7.90</span>
+           <span>CGPI: 8.00 </span>
         </div>
       </div>
 
