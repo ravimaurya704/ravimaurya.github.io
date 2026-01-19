@@ -12,17 +12,18 @@
   
   <style>
     :root {
-      /* ORIGINAL TERRACOTTA COLOR SCHEME */
-      --bg-primary: #0A0A0A;
-      --bg-secondary: #111111;
-      --bg-card: #161616;
-      --text-primary: #FAF7F5;
-      --text-secondary: #7A7572;
-      --text-muted: #4A4845;
-      --accent: #E07A5F; /* The Original Warm Terracotta */
-      --accent-soft: #F4D1C3;
-      --accent-glow: rgba(224, 122, 95, 0.15);
-      --border: #252525;
+      /* RESTORED BLUE/CYAN THEME */
+      --bg-primary: #0B1120; /* Deep Navy */
+      --bg-secondary: #0F172A; /* Slate 900 */
+      --bg-card: #1E293B; /* Slate 800 */
+      --text-primary: #F1F5F9; /* Slate 100 */
+      --text-secondary: #94A3B8; /* Slate 400 */
+      --text-muted: #64748B; /* Slate 500 */
+      
+      --accent: #38BDF8; /* Sky Blue / Cyan */
+      --accent-soft: #7DD3FC;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --border: #334155; /* Slate 700 */
     }
 
     * {
@@ -52,7 +53,7 @@
       width: 100%;
       height: 100%;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      opacity: 0.03;
+      opacity: 0.04;
       pointer-events: none;
       z-index: 1000;
     }
@@ -99,11 +100,11 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
+      color: #4ADE80;
+      border: 1px solid rgba(74, 222, 128, 0.2);
       padding: 6px 12px;
       border-radius: 100px;
-      background: var(--bg-card);
+      background: rgba(74, 222, 128, 0.05);
     }
 
     .status-dot {
@@ -298,10 +299,10 @@
       100% { top: 40px; opacity: 0; }
     }
 
-    /* Work Section */
-    .work-section {
-      padding: 120px 48px;
-      max-width: 1400px;
+    /* Standard Section Padding */
+    .content-section {
+      padding: 100px 48px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -310,280 +311,143 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 64px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
     }
 
     .section-title {
       font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .featured-project {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
-    }
-
-    .featured-project:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent);
-    }
-
-    .project-visual {
-      height: 400px;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Dashboard Visual (Custom CSS) */
-    .visual-dashboard {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      padding: 40px;
-    }
-
-    .data-card {
-      background: rgba(250, 247, 245, 0.05);
-      border: 1px solid rgba(250, 247, 245, 0.1);
-      border-radius: 16px;
-      padding: 20px;
-      min-width: 160px;
-    }
-
-    .mini-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      height: 80px;
-      margin-bottom: 16px;
-    }
-
-    .chart-bar {
-      width: 12px;
-      background: linear-gradient(to top, var(--accent), var(--accent-soft));
-      border-radius: 4px;
-      animation: growBar 2s ease-out infinite alternate;
-    }
-    
-    @keyframes growBar { 0% { opacity: 0.6; transform: scaleY(0.9); } 100% { opacity: 1; transform: scaleY(1); } }
-
-    .data-label {
-      font-size: 10px;
-      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
       letter-spacing: 0.1em;
-      color: var(--text-secondary);
-    }
-
-    .data-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .project-content {
-      padding: 40px 48px;
-    }
-
-    .project-number {
-      font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .project-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      color: var(--text-primary);
-    }
-
-    .project-description {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      max-width: 560px;
-    }
-
-    .project-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .tag {
-      padding: 6px 14px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      transition: all 0.3s ease;
-    }
-
-    .tag:hover {
-      background: var(--accent);
-      color: var(--bg-primary);
-      border-color: var(--accent);
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 600;
       color: var(--accent);
-      text-decoration: none;
-      transition: gap 0.3s ease;
     }
 
-    .project-link:hover {
-      gap: 12px;
-    }
-
-    /* Grid for other projects */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-    }
-
-    .project-card {
+    /* Cards */
+    .card-item {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--accent);
-    }
-
-    .project-card .project-visual {
-      height: 240px;
-    }
-
-    .project-card .project-content {
-      padding: 28px 32px;
-    }
-
-    /* Quantum Visual */
-    .visual-quantum {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .atom-core {
-      width: 20px;
-      height: 20px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 20px var(--accent);
-    }
-    
-    .orbit {
-      position: absolute;
-      border: 1px solid rgba(224, 122, 95, 0.4);
-      border-radius: 50%;
-      animation: spin 6s linear infinite;
-    }
-    .orbit:nth-child(1) { width: 100px; height: 100px; animation-duration: 4s; border-color: var(--accent-soft); }
-    .orbit:nth-child(2) { width: 160px; height: 160px; animation-duration: 7s; animation-direction: reverse; }
-    
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-
-    /* About Section */
-    .about-section {
-      padding: 120px 48px;
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-story {
-      font-size: 18px;
-      line-height: 1.9;
-      color: var(--text-secondary);
-      margin-bottom: 48px;
-    }
-
-    .about-story strong {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    .about-story .highlight {
-      color: var(--accent);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .skill-item {
-      padding: 16px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: all 0.3s ease;
-    }
-
-    .skill-item:hover {
+    .card-item:hover {
+      transform: translateY(-5px);
       border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Experience Specifics */
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .job-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
       color: var(--text-primary);
     }
+
+    .job-company {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .job-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+
+    .job-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .job-list li { margin-bottom: 8px; }
+
+    /* Project Visuals */
+    .project-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        overflow: hidden;
+        margin-bottom: 32px;
+        transition: transform 0.4s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+    }
+
+    .project-visual {
+      height: 300px;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-content { padding: 40px; }
+    
+    .project-title-text {
+        font-family: 'Syne';
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text-primary);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(56, 189, 248, 0.1); /* Blue tint */
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-right: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* CSS Animations for Visuals */
+    .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 100px; }
+    .bar { width: 20px; background: var(--accent); border-radius: 4px; animation: barAnim 2s infinite alternate ease-in-out; }
+    @keyframes barAnim { 0% { height: 20%; opacity: 0.5; } 100% { height: 100%; opacity: 1; } }
+
+    .orbit-container { position: relative; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; }
+    .core { width: 20px; height: 20px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 20px var(--accent); }
+    .ring { position: absolute; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 50%; }
+    .ring-1 { width: 100%; height: 60%; animation: spin 4s linear infinite; }
+    .ring-2 { width: 60%; height: 100%; animation: spin 6s linear infinite reverse; }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
 
     /* Footer */
     footer {
-      padding: 32px 48px;
+      padding: 48px;
       border-top: 1px solid var(--border);
       text-align: center;
-    }
-
-    .footer-text {
-      font-size: 12px;
-      color: var(--text-muted);
+      background: var(--bg-secondary);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .project-grid { grid-template-columns: 1fr; }
-      .about-section { grid-template-columns: 1fr; gap: 40px; }
+      .content-section { padding: 60px 24px; }
       header { padding: 16px 24px; }
       .hero { padding: 100px 24px 60px; }
     }
@@ -595,7 +459,7 @@
   <header>
     <div class="status-badge">
       <span class="status-dot"></span>
-      Stamp 1G (Available)
+      Stamp 1G (Full Working Rights)
     </div>
     <div class="logo">rm</div>
     <a href="./Resume.pdf" target="_blank" class="download-cv">
@@ -621,172 +485,202 @@
         into strategic intelligence using Qlik, Python, and next-gen Quantum ML.
       </p>
       
-      <p class="hero-current">
-        Previously driving BI strategy at <a href="#">Qlik</a> and <a href="#">HDFC</a>
-      </p>
-      
       <div class="scroll-indicator">
-        <span>See my work</span>
+        <span>See my journey</span>
         <div class="scroll-arrow"></div>
       </div>
     </div>
   </section>
 
-  <section class="work-section" id="work">
+  <section class="content-section" id="experience">
     <div class="section-header">
-      <h2 class="section-title">Selected Work</h2>
-      <span class="section-counter">3 Key Projects</span>
+      <h2 class="section-title">01. Professional Journey</h2>
     </div>
 
-    <article class="featured-project">
-      <div class="project-visual">
-        <div class="visual-dashboard">
-          <div class="data-card">
-            <div class="mini-chart">
-              <div class="chart-bar" style="height: 40%; animation-delay: 0s;"></div>
-              <div class="chart-bar" style="height: 65%; animation-delay: 0.2s;"></div>
-              <div class="chart-bar" style="height: 45%; animation-delay: 0.4s;"></div>
-              <div class="chart-bar" style="height: 80%; animation-delay: 0.6s;"></div>
+    <div class="card-item">
+        <div class="job-header">
+            <div>
+                <div class="job-company">Qlik (Data Integration)</div>
+                <div class="job-title">Senior Consultant</div>
             </div>
-            <div class="data-label">Attrition Rate</div>
-            <div class="data-value">14.2%</div>
-          </div>
-          <div class="data-card">
-             <div class="mini-chart">
-              <div class="chart-bar" style="height: 50%; animation-delay: 0.1s;"></div>
-              <div class="chart-bar" style="height: 90%; animation-delay: 0.3s;"></div>
-              <div class="chart-bar" style="height: 70%; animation-delay: 0.5s;"></div>
+            <div class="job-date">2022 — 2024</div>
+        </div>
+        <ul class="job-list">
+            <li>Directed migration of mission-critical analytics to Qlik Cloud (SaaS) for global accounts like American Express & Herc Rentals.</li>
+            <li>Engineered automated Python/SQL pipelines, reducing data refresh latency by 40%.</li>
+            <li>Designed "BUR" (Business Unit Reporting) systems to track risk thresholds.</li>
+        </ul>
+    </div>
+
+    <div class="card-item">
+        <div class="job-header">
+            <div>
+                <div class="job-company">HDFC Limited</div>
+                <div class="job-title">Senior Officer (BI)</div>
             </div>
-            <div class="data-label">Retention Score</div>
-            <div class="data-value">94%</div>
-          </div>
+            <div class="job-date">2020 — 2022</div>
         </div>
-      </div>
-      <div class="project-content">
-        <span class="project-number">01</span>
-        <h3 class="project-title">HR Employee Attrition<br>Dashboard</h3>
-        <p class="project-description">
-          A comprehensive Power BI & Tableau solution to track workforce stability. 
-          Identified key turnover drivers to help HR teams retain top talent.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Power BI</span>
-          <span class="tag">Tableau</span>
-          <span class="tag">Python Cleaning</span>
-        </div>
-        <a href="https://github.com/ravimaurya704/hr-employee-attrition-dashboard" class="project-link" target="_blank">
-          View Repository
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-    </article>
+        <ul class="job-list">
+            <li>Built the "Single Source of Truth" SQL pipeline for credit risk assessment across Loans & Deposits.</li>
+            <li>Automated 100% of regulatory reporting submissions for banking authorities.</li>
+            <li>Managed large-scale Qlik Sense server deployments.</li>
+        </ul>
+    </div>
 
-    <div class="project-grid">
-      
-      <article class="project-card">
-        <div class="project-visual">
-          <div class="visual-quantum">
-            <div class="orbit"></div>
-            <div class="orbit"></div>
-            <div class="atom-core"></div>
-          </div>
+    <div class="card-item">
+        <div class="job-header">
+            <div>
+                <div class="job-company">Melstar Technologies</div>
+                <div class="job-title">Software Engineer</div>
+            </div>
+            <div class="job-date">2018 — 2020</div>
         </div>
-        <div class="project-content">
-          <span class="project-number">02</span>
-          <h3 class="project-title">Quantum AI for<br>Cancer Detection</h3>
-          <p class="project-description">
-            Hybrid Quantum-Classical Neural Network (PennyLane) achieving 95.9% accuracy in medical imaging.
-          </p>
-          <div class="project-tags">
-            <span class="tag">Quantum ML</span>
-            <span class="tag">Python</span>
-            <span class="tag">Research</span>
-          </div>
-          <div style="display: flex; gap: 16px; margin-top: 16px;">
-             <a href="https://quantum-ai-cancer-detection.streamlit.app" class="project-link" target="_blank" style="color: #4ADE80;">
-                <span style="width:8px; height:8px; background:#4ADE80; border-radius:50%; display:inline-block; animation: pulse 1s infinite;"></span>
-                Live Demo
-             </a>
-             <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" class="project-link" target="_blank">
-                Code
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                   <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-             </a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-visual">
-          <div class="visual-dashboard">
-             <div class="data-card" style="border-color: var(--accent-soft);">
-                <div class="data-label" style="color: var(--accent);">Stress Level</div>
-                <div class="data-value">Low</div>
-             </div>
-          </div>
-        </div>
-        <div class="project-content">
-          <span class="project-number">03</span>
-          <h3 class="project-title">Remote Work &<br>Mental Health</h3>
-          <p class="project-description">
-            Geospatial analysis of employee well-being trends using SQL and interactive Tableau maps.
-          </p>
-          <div class="project-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Geospatial</span>
-            <span class="tag">Tableau</span>
-          </div>
-          <a href="https://github.com/ravimaurya704/remote-work-mental-health-analysis-tableau-dashboard-" class="project-link" target="_blank">
-            View Analysis
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </article>
-      
+        <ul class="job-list">
+            <li>Developed analytical dashboards to track Non-Performing Assets (NPA).</li>
+            <li>Modeled Star/Snowflake schemas for financial audit evidence.</li>
+        </ul>
     </div>
   </section>
 
-  <section class="about-section" id="about">
-    <div class="about-visual">
-        <img src="./profile.jpg" alt="Ravi" style="width: 100%; border-radius: 24px; opacity: 0.8; filter: grayscale(20%);">
+  <section class="content-section" id="projects">
+    <div class="section-header">
+      <h2 class="section-title">02. Selected Work</h2>
     </div>
-    <div class="about-content">
-      <h2 style="font-family: 'Syne'; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px;">The Backstory</h2>
-      <p class="about-story">
-        Previously, I was a <strong>Business Intelligence Developer</strong>, spending 6+ years at major firms like HDFC and Qlik building the pipelines that power corporate decisions.
-        <br><br>
-        However, coming to Ireland for my <strong>MSc in Data Analytics</strong> changed everything. I moved beyond just reporting on the past to predicting the future—mastering <span class="highlight">Machine Learning, Deep Learning, and Forecasting</span>.
-        <br><br>
-        In my research, I took this further by exploring <strong>Quantum Machine Learning</strong>—combining robust enterprise data architecture with cutting-edge physics to build systems that are not just faster, but smarter.
-      </p>
-      
-      <h3 style="font-family: 'Syne'; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px;">Technical Arsenal</h3>
-      <div class="skills-grid">
-        <div class="skill-item">Python & SQL</div>
-        <div class="skill-item">Qlik Sense / SaaS</div>
-        <div class="skill-item">Power BI</div>
-        <div class="skill-item">Quantum ML</div>
-        <div class="skill-item">AWS Cloud</div>
-        <div class="skill-item">ETL Pipelines</div>
-        <div class="skill-item" style="border-style: dashed;">Data Modeling</div>
-        <div class="skill-item" style="border-style: dashed;">Statistical Analysis</div>
-        <div class="skill-item" style="border-style: dashed;">System Design</div>
-      </div>
+
+    <div class="project-card">
+        <div class="project-visual">
+            <div class="bar-chart">
+                <div class="bar" style="animation-delay: 0s;"></div>
+                <div class="bar" style="animation-delay: 0.2s;"></div>
+                <div class="bar" style="animation-delay: 0.4s;"></div>
+                <div class="bar" style="animation-delay: 0.1s;"></div>
+            </div>
+        </div>
+        <div class="project-content">
+            <h3 class="project-title-text">HR Employee Attrition Dashboard</h3>
+            <p style="color:var(--text-secondary); margin-bottom:16px;">
+                End-to-end analytics solution to track workforce stability using Power BI & Tableau. 
+                Identified key turnover drivers to help HR teams retain top talent.
+            </p>
+            <div style="margin-bottom:24px;">
+                <span class="tag">Power BI</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">Python</span>
+            </div>
+            <a href="https://github.com/ravimaurya704/hr-employee-attrition-dashboard" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:14px;">View Code →</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-visual">
+            <div class="orbit-container">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="core"></div>
+            </div>
+        </div>
+        <div class="project-content">
+            <h3 class="project-title-text">Quantum AI for Cancer Detection</h3>
+            <p style="color:var(--text-secondary); margin-bottom:16px;">
+                Hybrid Quantum-Classical Neural Network (PennyLane) achieving 95.9% accuracy in medical imaging, 
+                outperforming traditional ResNet50 models.
+            </p>
+            <div style="margin-bottom:24px;">
+                <span class="tag">Quantum ML</span>
+                <span class="tag">PennyLane</span>
+                <span class="tag">Deep Learning</span>
+            </div>
+            <div style="display:flex; gap:20px;">
+                <a href="https://quantum-ai-cancer-detection.streamlit.app" target="_blank" style="color:#4ADE80; text-decoration:none; font-weight:600; font-size:14px;">● Live Demo</a>
+                <a href="https://github.com/ravimaurya704/Quantum-AI-Cancer-Detection" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:14px;">View Code →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-content">
+            <h3 class="project-title-text">Remote Work & Mental Health</h3>
+            <p style="color:var(--text-secondary); margin-bottom:16px;">
+                Geospatial analysis of employee well-being trends using SQL and interactive Tableau maps.
+            </p>
+            <div style="margin-bottom:24px;">
+                <span class="tag">SQL</span>
+                <span class="tag">Geospatial Analysis</span>
+                <span class="tag">Tableau</span>
+            </div>
+            <a href="https://github.com/ravimaurya704/remote-work-mental-health-analysis-tableau-dashboard-" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:14px;">View Analysis →</a>
+        </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="education">
+    <div class="section-header">
+      <h2 class="section-title">03. Academic Credentials</h2>
+    </div>
+
+    <div class="card-item">
+        <div class="job-header">
+            <div>
+                <div class="job-title">MSc Data Analytics</div>
+                <div class="job-company">Dublin Business School</div>
+            </div>
+            <div class="job-date">Expected 2026</div>
+        </div>
+        <p style="color:var(--text-secondary); font-size:14px;">First Class Honours (1.1) Track. Specialization in Machine Learning & Data Storage.</p>
+    </div>
+
+    <div class="card-item">
+        <div class="job-header">
+            <div>
+                <div class="job-title">B.E. Electronics Engineering</div>
+                <div class="job-company">Mumbai University</div>
+            </div>
+            <div class="job-date">2017</div>
+        </div>
+        <p style="color:var(--text-secondary); font-size:14px;">Result: CGPI 7.90</p>
+    </div>
+
+    <div class="card-item">
+        <div class="job-header">
+            <div>
+                <div class="job-title">Diploma Engineering</div>
+                <div class="job-company">MSBTE</div>
+            </div>
+            <div class="job-date">2014</div>
+        </div>
+        <p style="color:var(--text-secondary); font-size:14px;">Result: Distinction (87.54%)</p>
+    </div>
+  </section>
+
+  <section class="content-section" id="about">
+    <div class="section-header">
+      <h2 class="section-title">The Backstory</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px;">
+        <div>
+             <img src="./profile.jpg" alt="Ravi" style="width: 100%; border-radius: 20px; border: 1px solid var(--border); opacity: 0.9;">
+        </div>
+        <div>
+            <p style="color:var(--text-secondary); font-size:18px; line-height:1.8; margin-bottom:24px;">
+                Previously, I was a <strong>Business Intelligence Developer</strong>, spending 6+ years at major firms like HDFC and Qlik building the pipelines that power corporate decisions.
+            </p>
+            <p style="color:var(--text-secondary); font-size:18px; line-height:1.8; margin-bottom:24px;">
+                However, coming to Ireland for my <strong>MSc in Data Analytics</strong> changed everything. I moved beyond just reporting on the past to predicting the future—mastering <span style="color:var(--accent);">Machine Learning, Deep Learning, and Forecasting</span>.
+            </p>
+            <p style="color:var(--text-secondary); font-size:18px; line-height:1.8;">
+                In my research, I took this further by exploring <strong>Quantum Machine Learning</strong>—combining robust enterprise data architecture with cutting-edge physics to build systems that are not just faster, but smarter.
+            </p>
+        </div>
     </div>
   </section>
 
   <footer>
     <div style="display: flex; justify-content: center; gap: 32px; margin-bottom: 32px;">
-       <a href="https://linkedin.com/in/ravimaurya704" style="color: var(--text-secondary); text-decoration: none;">LinkedIn</a>
-       <a href="https://github.com/ravimaurya704" style="color: var(--text-secondary); text-decoration: none;">GitHub</a>
-       <a href="mailto:ravimaurya.ie@gmail.com" style="color: var(--text-secondary); text-decoration: none;">Email</a>
+       <a href="https://linkedin.com/in/ravimaurya704" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">LinkedIn</a>
+       <a href="https://github.com/ravimaurya704" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">GitHub</a>
+       <a href="mailto:ravimaurya.ie@gmail.com" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">Email</a>
     </div>
-    <p class="footer-text">Built by Ravi Maurya · 2026</p>
+    <p style="color:var(--text-muted); font-size:12px;">Built by Ravi Maurya · 2026</p>
   </footer>
 
   <script>
@@ -809,7 +703,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.hero-name, .hero-tagline, .hero-description, .featured-project, .project-card, .about-content').forEach(el => {
+    document.querySelectorAll('.hero-name, .hero-tagline, .hero-description, .card-item, .project-card, .about-content').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
